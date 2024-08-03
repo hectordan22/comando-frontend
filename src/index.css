@@ -16,8 +16,8 @@ body{
    /*  background-image: linear-gradient(to right top, #161a42, #1a2848, #25354c, #36424e, #494d50); */
    /*  background: linear-gradient(90deg, rgba(43,60,66,1) 0%, rgba(21,48,87,1) 27%, rgba(67,80,108,1) 48%, rgba(38,69,101,1) 90%); */
    /* background-image: linear-gradient(to right top, #373305, #5c500d, #866e15, #b48c1f, #e8aa2b); */
-   background: linear-gradient(90deg, rgb(26, 36, 40) 0%, rgb(15, 35, 62) 27%, rgb(40, 48, 65) 48%, rgb(14, 26, 39) 90%);
- 
+   /* background: linear-gradient(90deg, rgb(26, 36, 40) 0%, rgb(15, 35, 62) 27%, rgb(40, 48, 65) 48%, rgb(14, 26, 39) 90%); */
+   background-color: #e0e0e0;
 }
 /* Estilos para el menu*/
 
