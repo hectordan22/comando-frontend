@@ -38,8 +38,8 @@ header{
    box-shadow: rgba(63, 187, 240, 0.17) 0px -23px 25px 0px inset, rgba(57, 130, 239, 0.15) 0px -36px 30px 0px inset, rgba(231, 228, 228, 0.1) 0px -79px 40px 0px inset, rgba(115, 172, 238, 0.06) 0px 2px 1px, rgba(240, 238, 238, 0.09) 0px 4px 2px, rgba(126, 179, 249, 0.09) 0px 8px 4px, rgba(87, 170, 226, 0.09) 0px 16px 8px, rgba(153, 195, 219, 0.09) 0px 32px 16px;
 }
 .logo-header{
-    width: 150px;
-    height: 150px;
+    width: 140px;
+    height: 140px;
     margin-top: 5rem;
 }
 .logo-header img{
