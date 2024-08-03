@@ -1,0 +1,368 @@
+.carousel-inner{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: all .3s ease-in;
+   /*  background-color: rgb(36, 10, 10); */
+    overflow: hidden;
+    background-color: rgba(36, 10, 10, 0.103); 
+    visibility: visible;
+}
+
+.controls-arrows-inner{
+   /*  color: orangered; */
+   color: #fff;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+   /*  background: linear-gradient(to right, yellow, orange, orangered); */
+   background: linear-gradient(90deg, rgba(34, 47, 52, 1) 0%, rgba(15, 34, 61, 1) 27%, rgba(40, 47, 64, 1) 48%, rgba(28, 49, 73, 1) 90%);
+    align-items: center;
+    padding: 5px;
+   /*  text-shadow: white -1px -1px 0px, white 1px 1px 0px, white -1px 1px 0px, white 1px -1px 0px; */
+   text-shadow: rgb(8, 61, 173) -1px -1px 0px, rgb(7, 78, 166)1px 1px 0px, rgb(7, 85, 180) -1px 1px 0px, rgb(41, 28, 117) 1px -1px 0px;
+    /* font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif; */
+    font-size: 22px;
+   letter-spacing: 1.5px;
+    
+}
+
+.carousel-item{
+    width: 95%;
+    height: 100%;
+    flex-wrap: wrap;
+    background: transparent;
+    position: relative;
+    transition: all 0.3s ease;
+    margin-left:5%;
+    
+}
+
+
+.item-ticket1,
+.item-ticket2{
+    width: 8%;
+    height: 35px;
+   /*  background: rgb(172, 172, 153); */
+   background: rgb(195, 195, 181);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3.5px;
+    box-shadow: rgba(50, 52, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    cursor: pointer;
+    padding: 1.5px;
+    position: relative;
+    color: rgb(36, 10, 10);
+    font-size: 1.1rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+     /* border: 1px solid red;  */
+    border: 1px solid rgb(0, 123, 255);
+    transition: all 0.3s ease;
+
+}
+
+.item-ticket1:hover,
+.item-ticket2:hover{
+  /*   color: #ff4500; */
+    color:#a52744;
+    transform: scale(1.1);
+}
+
+
+.control-arrow{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+
+.check,
+.check2{/*Clase para agregar al momento de elejir a un numero con el evento click*/
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 8%;
+    height: 35px;
+    border-radius: 50%;
+    border: 1px solid red;
+    margin-left: 1%;
+    background: rgb(36, 10, 10);
+    color: rgb(36, 10, 10);
+    font-size: 1.1rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    cursor: auto;
+}
+.check::after,
+.check2::after{/*CAMNIAR EL CONTENT POR UN CHECK O UB BIEN*/
+    content: "✔️";
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: green;
+    width: 9%;
+    height:40px;
+    font-size: 1.5rem;
+    
+}
+
+.item-not-avaliable1,.item-not-avaliable2{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 8%;
+    height: 35px;
+    border-radius: 50%;
+  /*   border: 1px solid red; */
+    margin-left: 1%;
+    background: rgb(36, 10, 10);
+    color: rgb(36, 10, 10);
+    font-size: 1.1rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    cursor: auto;
+}
+
+.item-not-avaliable1::after, .item-not-avaliable2::after{
+    content: "x";
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(194, 3, 6);
+    width: 9%;
+    height:40px;
+    font-size: 1.5rem;
+    font-family:monospace;
+}
+
+.control-arrow img{
+    width: 90%; 
+    height: 90%;
+}
+.left{
+    rotate: 180deg;
+    left: 3%;
+}
+.rigth{
+    right: 3%;
+    
+}
+
+.content-selections-active{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1em;
+}
+
+.content-selections-desactive{
+   visibility: hidden;
+   
+}
+.title-selected{
+    font-size: 1.3rem;
+    text-shadow: -2px -2px 0 white, 2px 2px 0 white, -2px 2px 0 white, 2px -2px 0 white;
+    color:orangered;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    letter-spacing: .1rem;
+}
+
+.item-ticket-selected{
+    width: 90%;
+    display: flex;
+    flex-direction: row; 
+    justify-content: center;
+    align-items: center;
+    margin: 0.2rem auto;
+
+}
+.container-ticket{
+    width: 5rem;
+    height:3rem;
+    position: relative;
+    display: inline-block;
+    margin-left: 2rem;
+}
+
+.container-ticket img{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.number-selected-text{
+    width: 100%;
+    height: 100%;
+    color: red;
+    font-size: 1.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-shadow: white -1px -1px 0px, white 1px 1px 0px, white -1px 1px 0px, white 1px -1px 0px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    position: absolute;
+    left: 0%;
+    top:0%; 
+}
+
+
+.botonQuitar{
+    display: inline-block;
+    margin-left: 20px;
+    background:linear-gradient(to right, yellow,orangered);
+    color: rgb(255, 17, 0);
+    border-radius: 5px;
+    padding: 5px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    cursor: pointer;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    text-shadow: -1px -1px 0 white, 1px 1px 0 white, -1px 1px 0 white, 1px -1px 0 white;
+}
+
+.btn-comprar-Sorteo{
+    padding: 5px;
+    background-color: #ff4500;
+    color: red;
+    border-radius: 5px;
+    width: 150px;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    font-size: 23px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    cursor: pointer;
+    text-shadow: -1px -1px 0 white, 1px 1px 0 white, -1px 1px 0 white, 1px -1px 0 white;
+    transition: all .5s linear;
+}
+
+.selected-items{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    color: red;
+    font-size: 1.3rem;
+} 
+
+.container-amount{
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 1.5rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 0 15vw rgba(0,0,0,.8);
+}
+
+.amount-title{
+    font-size: 1.3rem;
+    color: #fff;
+    margin-right: 10px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.amount-value{
+    font-size: 2.2rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: orangered;
+    text-shadow: -1px -1px 0 white, 1px 1px 0 white, -1px 1px 0 white, 1px -1px 0 white;
+    margin-left: 10px;
+}
+
+.carousel-hide {
+    visibility: hidden;
+}
+
+.hide-modal{
+    display: none;
+}
+
+
+
+ 
+
+@media(min-width: 450px){
+    .item-ticket{
+        width: 9%;
+        height: 40px;
+        padding: 0;
+        margin: 1.5px;
+    }
+}
+
+@media(min-width:680px){
+    .carousel-inner{
+        width: 70%;
+        margin: auto;
+        border-radius: 10px;
+    }
+}
+
+@media(min-width:980px){
+    .carousel-inner{
+        width: 50%;
+    }
+
+    .content-selections{
+        width: 60%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        padding-bottom: 2em;
+        margin: auto;
+        position: relative;
+        top: 3rem;
+    }
+
+    .selected-items{
+        width: 50%;
+    }
+    .title-selected{
+        width: 100%;
+        text-align: center;
+        margin-bottom: 2em;
+        font-size: 1.8rem;
+    }
+
+    .btn-comprar-Sorteo{
+        position: relative;
+        top: 3rem;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 3em;
+    }
+
+    .container-amount{
+        width: 50%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .amount-value{
+        font-size: 2.5rem;
+    }
+}
+
+@media(min-width:1024px){
+    .carousel-inner{
+        width: 50%;
+        margin: auto;
+        border-radius: 10px;
+    }
+}
+@media(min-width:1200px){
+    .carousel-inner{
+        width: 40%;
+        margin: auto;
+        border-radius: 10px;
+    }
+}

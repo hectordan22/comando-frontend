@@ -1,0 +1,95 @@
+/* Estilos para el Reloj*/
+.countdown {
+    border: solid 10px rgb(50, 50, 50);
+    border-radius: 35px;
+    font-family: 'Digital Numbers', sans-serif;
+    font-size: 30px;
+   /*  color: rgb(255, 125, 125); */
+   color:rgba(168,142,42,255);
+    /* text-shadow: 0 0 10px red; */
+    text-shadow: 0 0 10px rgb(255, 17, 0);
+    background-color: rgb(0, 0, 0);
+    box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    margin: 2rem auto;
+    
+  }
+
+  .countdown span {
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    width: 24%;
+    height: 60px;
+    padding-bottom: 10px;
+    margin-top: 2.5rem;
+  }
+  
+  .countdown span::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    color: rgba(255, 255, 255, 0.1);
+    text-shadow: none;
+  }
+  .countdown #dayElement::before {
+    content: 'DAYS';
+  }
+  .countdown #hourElement::before {
+    content: 'HOURS';
+  }
+  .countdown #minElement::before {
+    content: 'MINS';
+    left: 20%;
+  }
+  .countdown #secElement::before {
+    content: 'SECS';
+  }
+  .countdown span::before {
+    position: absolute;
+    bottom: 20%;
+    left: 10%;
+    font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: darkgray;
+    text-shadow: none;
+  }
+
+  .timeTitle{
+    color: #fff;
+    text-align: center;
+    font-size: 26px;
+  }
+
+  @media(min-width: 450px){
+    .countdown{
+        padding: 18px;
+        width:380px;
+        align-items: start;
+        font-size: 50px;
+    }
+    .countdown span{
+        height: 110px;
+        margin-top: 0;
+    }
+    .countdown span::before {
+        font-size: 20px;
+    }
+}
+
+ @media(min-width:980px){
+    .countdown{
+        width:360px;
+    }
+} 
+
+@media(min-width:1024px){
+  .countdown{
+      width:400px;
+  }
+} 
+ 
