@@ -16,9 +16,8 @@ body{
    /*  background-image: linear-gradient(to right top, #161a42, #1a2848, #25354c, #36424e, #494d50); */
    /*  background: linear-gradient(90deg, rgba(43,60,66,1) 0%, rgba(21,48,87,1) 27%, rgba(67,80,108,1) 48%, rgba(38,69,101,1) 90%); */
    /* background-image: linear-gradient(to right top, #373305, #5c500d, #866e15, #b48c1f, #e8aa2b); */
-   /* background: linear-gradient(90deg, rgb(26, 36, 40) 0%, rgb(15, 35, 62) 27%, rgb(40, 48, 65) 48%, rgb(14, 26, 39) 90%); */
-   /* background-color: #e0e0e0; */
-   background-color: #695f5f;
+   background: linear-gradient(90deg, rgb(26, 36, 40) 0%, rgb(15, 35, 62) 27%, rgb(40, 48, 65) 48%, rgb(14, 26, 39) 90%);
+   
 
 }
 /* Estilos para el menu*/
@@ -39,9 +38,9 @@ header{
    box-shadow: rgba(63, 187, 240, 0.17) 0px -23px 25px 0px inset, rgba(57, 130, 239, 0.15) 0px -36px 30px 0px inset, rgba(231, 228, 228, 0.1) 0px -79px 40px 0px inset, rgba(115, 172, 238, 0.06) 0px 2px 1px, rgba(240, 238, 238, 0.09) 0px 4px 2px, rgba(126, 179, 249, 0.09) 0px 8px 4px, rgba(87, 170, 226, 0.09) 0px 16px 8px, rgba(153, 195, 219, 0.09) 0px 32px 16px;
 }
 .logo-header{
-    width: 150px;
-    height: 150px;
-    margin-top: 5rem;
+    width: 80px;
+    height:80px;
+    margin-top: .5rem;
 }
 .logo-header img{
     width: 100%;
@@ -87,17 +86,33 @@ header{
 
 .banner-container{
     width: 100%;
-    height: 600px;
-    
+    height: 45vw;
+    margin-top: 4.5rem;
+    position: relative;
+    overflow: hidden;
 }
 
-.banner-container img {
+.img-carrusel{
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    object-position: center;
+    position: absolute;
+    opacity: 0;
 }
-
+.active{
+    opacity: 1;
+    animation: desplazamiento 1 linear 0.3s;
+}
+@keyframes desplazamiento{
+    0%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
+.disable{
+    display: none;
+}
 .description-banner-desktop{
     font-size: 35px;
     font-weight: 600;
@@ -120,7 +135,6 @@ header{
 }
 
 /* Estilos para la seccion de Gana con Nosotros*/
-
 .title-winner-whitme{
     display: flex;
     align-items: center;
@@ -176,7 +190,7 @@ header{
     background-position: center;
     background-size: auto;
    /*  box-shadow: rgb(100 100 100) 0px -23px 25px 0px inset, rgb(255 255 36) 0px -36px 30px 0px inset, rgb(251 255 0 / 73%) 0px -79px 40px 0px inset, rgb(0 234 225 / 89%) 0px 2px 1px, rgb(0 0 0 / 71%) 0px 4px 2px, rgb(47 46 46 / 81%) 0px 8px 4px, rgb(42 191 234 / 20%) 0px 16px 8px, rgb(202 166 166 / 54%) 0px 32px 16px; */
-   box-shadow: rgb(255 0 0 / 61%) 0px 22px 70px 4px;
+   /* box-shadow: rgb(255 0 0 / 61%) 0px 22px 70px 4px; */
 }   
 
 .card-last-winner{
@@ -803,11 +817,6 @@ form > button:hover,
 /* Para movil nav*/
 @media (max-width:768px){
 
-    .banner-container{
-        display: block;
-        margin-top: 76px;
-    }
-
     .img-logo-movil{
         background-image: url('/src/assets/images/mago.png');
         height: 300px;
@@ -854,7 +863,6 @@ form > button:hover,
     .banner-movil{
         display: none;
     }
-
 
     .banner-movil img {
         width: 100%;
@@ -928,20 +936,13 @@ form > button:hover,
         left:-100%;
         transition: all .3s ease;
     }
-    
     .title-nosotros{
         font-size: 35px;
         margin-top: 2.5em;
-    }
-   
+    } 
 }
 
 @media (min-width:768px) and (max-width: 980px){
-
-    .banner-container{
-        height: 700px;
-        margin-top: 76px;
-    }
      .title-desktop{
         font-size: 22px;
      }
@@ -1005,8 +1006,7 @@ form > button:hover,
 @media (min-width:480px) and (max-width: 768px){
 
     .banner-container{
-        height: 450px;
-        margin-top: 76px;
+        height: 50vw;
     }
     .title-winner-whitme{
         margin-top: -1.5em;
@@ -1173,12 +1173,9 @@ form > button:hover,
     }
 
     .banner-container{
-        height: 250px;
-        margin-top: 76px;
+        height: 55vw; 
     }
 }
-
-
 
 @media (min-width:980px) and (max-width: 1200px){
     .description-banner-desktop{
@@ -1204,23 +1201,6 @@ form > button:hover,
      form{
         align-items: center;
      }
-}
-
-
-@media (min-width:1200px){
-    .banner-container{
-        width: 100%;
-        height: 750px;
-        display: flex;
-        justify-content: center;
-    }
-
-    .banner-container img {
-        width: 90%;
-        height: 100%;
-        margin-top: 1.5em;
-        object-fit: fill;
-    }
 }
 
 .titleSelector{

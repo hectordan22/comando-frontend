@@ -19,7 +19,7 @@
 }
 
 .content-winner{
-   position: relative;
+    position: relative;
     width: 40%;
     display: flex;
      flex-direction: column; 
@@ -37,43 +37,49 @@
     position: relative;
     display: flex;
     justify-content: center;
+    background: linear-gradient(to bottom, transparent 52%, #ffefbe 80%, rgb(15, 35, 62)57%);
 }
 
 .content-image img {
-    width: 90%;
-    height: 100%;
-    border-radius: 7%;
-    opacity: .6;
-    margin: auto;
+    position: absolute;
+    width: 60%;
+    height: 60%;
+    top: 20%;
 }
-
+.cont-Balls{
+    position: relative;
+    width: 50%;
+    height: 32%;
+    margin: 6.5rem auto;
+    z-index: -1;
+    border-top-left-radius: 12rem;
+    border-top-right-radius: 34rem;
+    border-bottom-left-radius: 42rem;
+    border-bottom-right-radius: 40rem;
+    rotate: -5.5deg;
+    overflow: hidden;
+    z-index: 1;
+}
 .content-description{
     color: #fff;
     font-size: 22px;
-   /*  position: absolute; */
     top:35%;
     margin: 1em auto;
     width: 90%;
     text-align: center;
-    
-
 }
 
 .button-sorteo-more{
     position: absolute;
     bottom: -3px;
-    width: 90%;
+    width: 100%;
     background-color: rgba(0, 0, 0, 0.227);
-   font-size: 35px;
-   font-weight: 600;
-   border-bottom-left-radius: 18%;
-   border-bottom-right-radius: 18%;
-   height: 100px;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-;
-    
+    font-size: 35px;
+    font-weight: 600;
+    height: 92px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .content-reloj{
@@ -88,12 +94,14 @@
 
 .btn-more-winner{
     /* background-color: #f80505b7; */
-    background-color: rgba(168,142,42,255);
+    /* background-color: rgba(168,142,42,255); */
+    background: linear-gradient(to right, rgb(231, 231, 152), orange 87%, rgb(250, 103, 50));
     color: #fff;
     padding: 3px;
     width: 230px;
     text-align: center;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 @media (max-width:980px){
@@ -113,11 +121,16 @@
 
      .content-description{
         margin-bottom: 3em;
-
      }
 }
-
- @media (min-width:320px) and (max-width: 480px){
+@media (min-width:580px) and (max-width:980px){
+    .cont-Balls{
+        border-top-right-radius: 150rem;
+        border-bottom-left-radius: 142rem;
+        border-bottom-right-radius: 80rem;
+    }
+}
+@media (min-width:320px) and (max-width: 480px){
     .content-image{
         width: 100%;
         height: 400px;

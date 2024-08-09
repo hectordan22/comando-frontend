@@ -26,7 +26,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path='/' element={[
-             <Banner key={1} />,
+             <Banner key={1}/>,
              <h1 key={9} className='title-winner-withme'>Gana dinero con Nosotros</h1>,
              <WinnerWhitme key={2} />,
              <LastWinner key={5} />,
@@ -39,7 +39,7 @@ function App() {
         {/*Cambiar la fecha(dateRifa) despues la rifa*/}
         <Route path='/Rifa'
            element = {[
-            <div key={1} className='cont-app-reloj'><Reloj type='rifa' dateRifa='06/29/2024' horaRifa='6:00' /></div>,
+            <div key={1} className='cont-app-reloj'><Reloj type='rifa' dateRifa='09/29/2024' horaRifa='6:00' /></div>,
             <h2 className='titleSelector'  key={2}>Elige y Compra Ahora mismo tu numero y Participa en Nuestra Gran Rifa</h2>,
             <SelectorRifa key={3} />
            ]
