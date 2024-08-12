@@ -1,11 +1,11 @@
-import carro from '../assets/images/carro.jpg'
+// import carro from '../assets/images/carro.jpg'
 // import sorteo from '../assets/images/sorteo.jpg'
 import Reloj from './Reloj'
 import Balls from './Balls'
 import React from 'react'
 import tambor from '../assets/images/Tambor5.png'
-
 import { Link } from 'react-router-dom'
+import CartonRifa from './Carton'
 
 
 export class WinnerWhitme extends React.Component {
@@ -58,8 +58,8 @@ export class WinnerWhitme extends React.Component {
                         return (
                             <div className='content-winner' key={index}>
                                 <div className='content-image'>
-                                    <img src={item.title ==='Sorteos' ? tambor : carro} alt={item.title} />
-                                    {item.title === 'Sorteos'? <Balls/> : '' }
+                                    <img src={item.title ==='Sorteos' ? tambor : ''} alt={item.title} />
+                                    {item.title === 'Sorteos'? <Balls/> : <CartonRifa/> }
                                     <div className='button-sorteo-more'>
                                     <Link className='btn-more-winner' to={item.path}>{ item.title }</Link>
                                     </div>
