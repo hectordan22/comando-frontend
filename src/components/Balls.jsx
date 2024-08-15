@@ -1,4 +1,5 @@
-import { useEffect, useRef, useState, useLayoutEffect } from "react";
+import { useRef, useState, useLayoutEffect } from "react";
+import { json } from "react-router-dom";
 
 const Ball = ({x, y, radius, number}) => {
     return (
@@ -44,40 +45,43 @@ const Balls = () => {
     const [balls, setBalls] = useState([]);
     const containerRef = useRef(null);
 
-    const divResize = () => {
-        if(containerRef.current){
-            const containerWidth = containerRef.current.clientWidth;
-            const containerHeight = containerRef.current.clientHeight;
-            setBalls(generarBalls(30, containerWidth, containerHeight));
-        };
-    };
-
-    //Aqui colocar el codigo para que esto solo se ejecute si el cliente puede ver ese elemeto
-    useLayoutEffect(()=>{
-        divResize();
-        window.addEventListener('resize', divResize);
-
-        const updateBalls = () => {
-            setBalls((prevBalls) => {
-                const actualizandoBalls = prevBalls.map((ball) => {
-                    let newX = ball.x + ball.vx;
-                    let newY = ball.y + ball.vy; 
+        const divResize = () => {
+            if(containerRef.current){
+                const containerWidth = containerRef.current.clientWidth;
+                const containerHeight = containerRef.current.clientHeight;
+                setBalls(generarBalls(30, containerWidth, containerHeight));
+            };
+        };   
         
-                    if (newX < 0 || newX > containerRef.current.clientWidth - ball.radius * 2){//deberia ajustarse al contenedor
-                        ball.vx *= -1;
-                    }
-                    if (newY < 0 || newY > containerRef.current.clientHeight - ball.radius * 2){//deberia ajustarse al contenedor
-                        ball.vy *= -1;
-                    }
-                        
-                    return {...ball, x: ball.x + ball.vx, y: ball.y + ball.vy};
+        useLayoutEffect(()=>{
+            divResize() 
+            window.addEventListener("resize", divResize);
+
+            const updateBalls = () => {
+                setBalls((prevBalls) => {
+                    const actualizandoBalls = prevBalls.map((ball) => {
+                        let newX = ball.x + ball.vx;
+                        let newY = ball.y + ball.vy; 
+            
+                        if (newX < 0 || newX > containerRef.current.clientWidth - ball.radius * 2){//deberia ajustarse al contenedor
+                            ball.vx *= -1;
+                        }
+                        if (newY < 0 || newY > containerRef.current.clientHeight - ball.radius * 2){//deberia ajustarse al contenedor
+                            ball.vy *= -1;
+                        }
+                            
+                        return {...ball, x: ball.x + ball.vx, y: ball.y + ball.vy};
+                    });
+                    return actualizandoBalls;
                 });
-                return actualizandoBalls;
-            });
-            const animationFrame = requestAnimationFrame(updateBalls);
-            return () => cancelAnimationFrame(animationFrame);
-        };
-        updateBalls();
+                const animationFrame = requestAnimationFrame(updateBalls);
+                return () => cancelAnimationFrame(animationFrame);
+            };
+            updateBalls();
+
+            return () =>{
+                window.removeEventListener("resize", divResize);
+            }
     },[]);
 
     return (

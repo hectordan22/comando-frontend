@@ -24,7 +24,7 @@ export class WinnerWhitme extends React.Component {
                 {
                     title: 'Sorteos',
                     description: (
-                        <p>SORTEOS EPICOS: ¡Descubre tu suerte y conviertete en un ganador!<br></br>
+                        <p><span>SORTEOS EPICOS: ¡Descubre tu suerte y conviertete en un ganador!</span><br></br>
                         Los sorteos se realizan a diario a las 6pm y se transmite en vivo. La cantidad de dinero para el ganador depende del numero de participantes.<br></br>
                         No te quedes por fuera compra tu ticket ya.!
                         </p>
@@ -34,7 +34,7 @@ export class WinnerWhitme extends React.Component {
                 {
                     title: 'Rifas',
                     description: (
-                        <p>¡Participa en Nuestras Emocionantes Rifas!<br></br>
+                        <p><span>¡Participa en Nuestras Emocionantes Rifas!</span><br></br>
                             -PRIMER PREMIO<br></br>
                             -SEGUNDO PREMIO<br></br>
                             -TERCER PREMIO<br></br>
@@ -64,6 +64,7 @@ export class WinnerWhitme extends React.Component {
                                     <Link className='btn-more-winner' to={item.path}>{ item.title }</Link>
                                     </div>
                                 </div>
+
                                 <div className='content-description'>
                                     {item.description}
                                 </div>

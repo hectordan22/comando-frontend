@@ -1,6 +1,4 @@
-import React, { useLayoutEffect, useRef, useState } from "react";
-// import { useEffect, useState } from "react";
-
+import React, { useLayoutEffect, useRef} from "react";
 function CartonRifa(){
     const numeros = Array.from({length : 100},(_,index)=> index + 1);
 
