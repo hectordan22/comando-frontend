@@ -430,8 +430,8 @@ header{
   align-items: center;
 }
 
-.title {
-    font-size: 3rem;
+.title-faq {
+    font-size: 2.5rem;
     margin: 2rem 0rem;
     color: #ffffffad;
 }
@@ -450,7 +450,6 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
 }
 
 .question h3 {
@@ -465,14 +464,14 @@ header{
 .answer p {
     padding-top: 1rem;
     line-height: 1.6;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     color: rgba(255, 255, 255, 0.725);
 }
 
-.faq.active .answer {
+.faq.active-faq .answer {
     max-height: 300px;
 }
-.faq.active svg {
+.faq.active-faq svg {
     transform: rotate(180deg);
 }
 svg{
