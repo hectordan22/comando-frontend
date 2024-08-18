@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom"
 import useFetchBolets from '../scripts/useFetch';
 
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 
 const arraySorteo = []
@@ -86,6 +86,13 @@ function SelectorSorteo() {
         }
     }
 
+    useEffect(()=>{
+        const showLoader = () => {
+             window.scrollTo(0, 0); // Desplaza la página hacia arriba
+         }
+         showLoader();
+    })
+    
     let initRangeSorteo = data ? arraySorteo[countSorteo].init : 0
     let finishRangeSorteo = data ? arraySorteo[countSorteo].finish : 0
 

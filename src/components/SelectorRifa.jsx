@@ -4,7 +4,7 @@ import ticketDefinido from '../assets/images/ticke_definido_1.png'
 
 import useFetchBolets from '../scripts/useFetch';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const arrayRifa = []
 let totalRifas = 0
@@ -83,8 +83,12 @@ function SelectorRifa() {
         }
     }
 
-
-
+    useEffect(()=>{
+        const showLoader = () => {
+            window.scrollTo(0, 0); // Desplaza la página hacia arriba
+        }
+        showLoader();
+    })
 
     let initRangeRifa = data ? arrayRifa[countRifa].init : 0
     let finishRangeRifa = data ? arrayRifa[countRifa].finish : 0
