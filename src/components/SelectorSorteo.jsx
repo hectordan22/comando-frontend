@@ -223,7 +223,7 @@ function llenarData(data = {}) {
                 disponible: true,
                 numero: i
             }
-            for (let x = 0; x < response.length; x++) {
+            for (let x of response) {
                 const numeroCompra = response[x];
                 const { boleto } = numeroCompra
                 const boletoNumber = parseInt(boleto)
