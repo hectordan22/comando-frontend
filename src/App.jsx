@@ -8,11 +8,9 @@ import Navbar from './components/Navbar.jsx'
 import Banner from './components/Banner.jsx'
 import { WinnerWhitme } from './components/WinnerWhitme.jsx'
 import LastWinner from './components/LastWinner.jsx'
-import WeAbout from './components/WeAbout.jsx'
 import { Faqs } from './components/Faqs.jsx'
 import Footer from './components/Footer.jsx'
 import Contact from './components/Contact.jsx'
-// import SelectorTicket from './components/SelectorTicket.jsx'
 import Reloj from './components/Reloj.jsx'
 import SelectorRifa from './components/SelectorRifa.jsx'
 import SelectorSorteo from './components/SelectorSorteo.jsx'
@@ -33,7 +31,6 @@ function App() {
              <Faqs key={6} />,
              <Contact key={7} />,
              <Footer key = {8}/>
-   
         ]}/>
         
         {/*Cambiar la fecha(dateRifa) despues la rifa*/}

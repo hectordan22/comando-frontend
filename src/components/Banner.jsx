@@ -25,9 +25,10 @@ const Carrusel = ({items}) => {
 
   function Banner(){
     return (
-      <div>
+      <div className='Paleta-Colores-banner'>
         <Carrusel items={images}/>
       </div>
+
     )
   }
 

@@ -90,7 +90,9 @@ header{
     position: relative;
     overflow: hidden;
 }
-
+.Paleta-Colores-banner{
+    background: linear-gradient(to right, #f5c347,#f5ab45,#fa7e39,#f5592c,#f53825);
+}
 .img-carrusel{
     width: 50%;
     height: 80%;
