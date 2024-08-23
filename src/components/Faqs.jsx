@@ -18,7 +18,6 @@ export class Faqs extends React.Component {
                 faq.parentNode.classList.toggle("active-faq")
             }
         } else {
-            console.log(faq.nodeName)
             if (faq.nodeName === 'svg' || faq.nodeName === 'H3') {
                 console.log(faq.parentNode.parentNode)
                 faq.parentNode.parentNode.classList.toggle("active-faq")
