@@ -30,11 +30,9 @@ function App() {
              <h1 key={9} className='title-winner-withme'>Ganar Es Facil Con Nosotros</h1>,
              <WinnerWhitme key={2} />,
              <LastWinner key={5} />,
-            //  <WeAbout key={6} />,
-            //  <Faqs key={7} />,
-            //  <Contact key={8} />
              <Faqs key={6} />,
-             <Contact key={7} />
+             <Contact key={7} />,
+             <Footer key = {8}/>
    
         ]}/>
         
@@ -63,8 +61,6 @@ function App() {
         />
 
       </Routes>
-
-      <Footer />
     </BrowserRouter>
   )
 }

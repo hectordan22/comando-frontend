@@ -55,7 +55,7 @@ export class Faqs extends React.Component {
                 },
                 {
                     title: '¿Como es la entrega de los premios?',
-                    response: 'En el caso de la entrega de los premios de las rifas, ponernos en contacto con nustros ganadores es una gran ventaja, ya que existe la posibilidad de una interaccion personal, nuestros ganadores podeian elegir el medio que mas les convengan. En el caso de los sorteos el premio se estará entregando por el mismo medio de pago que el usuario realizo su compra'
+                    response: 'En el caso de la entrega de los premios de las rifas, ponernos en contacto con nuestros ganadores es una gran ventaja, ya que existe la posibilidad de una interaccion personal, nuestros ganadores podrian elegir el medio que mas les convengan. En el caso de los sorteos el premio se estará entregando por el mismo medio de pago que el usuario realizá su compra'
                 }
             ]
         });
