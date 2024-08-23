@@ -828,7 +828,7 @@ form > button:hover,
     
     .img-logo-movil {
         background-image: url(/src/assets/images/mago.png);
-        height: 150px;
+        height: 180px;
         width: 100%;
         background-position: center;
         background-size: contain;
@@ -899,7 +899,8 @@ form > button:hover,
         display: block;
         position: fixed;
         top:0;
-        background-color: #030433;
+       /*  background-color: #030433; */
+       background: linear-gradient(90deg, rgba(33, 44, 49, 0.964) 0%, rgba(21, 45, 76, 0.959) 27%, rgba(40, 47, 64, 0.953) 48%, rgb(24, 43, 62) 90%);
         width: 100%;
         height: 100vh;
         right: 0;
@@ -915,8 +916,9 @@ form > button:hover,
         padding: 6px;
         border-radius: 10px;
         height: 30px;
-        background: linear-gradient(90deg, rgb(37, 51, 57) 0%, rgb(25, 56, 99) 27%, rgb(26, 30, 41) 48%, rgb(33, 58, 87) 90%);
+        background: linear-gradient(90deg, rgb(41, 58, 65) 0%, rgb(25, 56, 100) 27%, rgb(16, 18, 24) 48%, rgb(47, 83, 124) 90%);
         border: 1px solid #9c5a00;
+        box-shadow: rgba(224, 221, 221, 0.181) 0px 54px 55px, rgba(227, 226, 226, 0.12) 0px -12px 30px, rgba(211, 210, 210, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     }
     .nav-menu ul li:last-child{
         background: linear-gradient(90deg, rgb(37, 51, 57) 0%, rgb(25, 56, 99) 27%, rgb(26, 30, 41) 48%, rgb(33, 58, 87) 90%);
@@ -950,7 +952,7 @@ form > button:hover,
     .button-movil-nav{
         width: 90%;
         display: flex;
-        justify-content: flex-end;
+        justify-content: flex-start;
         margin: auto;
         padding-top: 8px;
     }
@@ -1051,11 +1053,10 @@ form > button:hover,
      }
      .nav-menu ul li{
        width: 50%;
-       padding: 15px;
+      
      }
      .nav-menu ul li:last-child{
        width: 50%;
-       padding: 15px;
      }
 
      .card{
