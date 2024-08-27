@@ -34,7 +34,7 @@ export class Faqs extends React.Component {
             numberFaqs: [
                 {
                     title: '¿Cómo funcionan las rifas? ',
-                    response: 'Solo tienes que entrar al apartado de "RIFAS" y elegir los numeros con los cuales desees participar, al cumplirse el tiempo establecido, en nuestra plataforma, canales de difunsión como youtube, spotify y nuetras redes sociales se transmitira totalmente en vivo el proceso para elegir el ganador y a su vez se estará dando a conocer dicho ganador, además los datos del ganador estaran visibles en nuestra plataforma para hacer valer nuestra integridad y transprencia'
+                    response: 'Solo tienes que entrar al apartado de "RIFAS" y elegir los numeros con los cuales desees participar, al cumplirse el tiempo establecido, en nuestra plataforma, canales de difunsión como youtube, spotify y nuetras redes sociales se transmitira totalmente en vivo el proceso para elegir el ganador y a su vez se estará dando a conocer dicho ganador, además algunos datos del ganador estaran visibles en nuestra plataforma para hacer valer nuestra integridad y transprencia'
                 },
                 {
                     title: '¿Cómo funcionan los sorteos diarios?',

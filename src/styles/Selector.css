@@ -11,19 +11,19 @@
 
 .controls-arrows-inner{
    /*  color: orangered; */
-   color: #fff;
+    color: #fff;
     width: 100%;
     display: flex;
     justify-content: space-between;
    /*  background: linear-gradient(to right, yellow, orange, orangered); */
-   background: linear-gradient(90deg, rgba(34, 47, 52, 1) 0%, rgba(15, 34, 61, 1) 27%, rgba(40, 47, 64, 1) 48%, rgba(28, 49, 73, 1) 90%);
+    background: linear-gradient(90deg, rgba(34, 47, 52, 1) 0%, rgba(15, 34, 61, 1) 27%, rgba(40, 47, 64, 1) 48%, rgba(28, 49, 73, 1) 90%);
     align-items: center;
     padding: 5px;
    /*  text-shadow: white -1px -1px 0px, white 1px 1px 0px, white -1px 1px 0px, white 1px -1px 0px; */
-   text-shadow: rgb(8, 61, 173) -1px -1px 0px, rgb(7, 78, 166)1px 1px 0px, rgb(7, 85, 180) -1px 1px 0px, rgb(41, 28, 117) 1px -1px 0px;
+    text-shadow: rgb(8, 61, 173) -1px -1px 0px, rgb(7, 78, 166)1px 1px 0px, rgb(7, 85, 180) -1px 1px 0px, rgb(41, 28, 117) 1px -1px 0px;
     /* font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif; */
     font-size: 22px;
-   letter-spacing: 1.5px;
+    letter-spacing: 1.5px;
     
 }
 
@@ -43,8 +43,8 @@
 .item-ticket2{
     width: 8%;
     height: 35px;
-   /*  background: rgb(172, 172, 153); */
-   background: rgb(195, 195, 181);
+    /*  background: rgb(172, 172, 153); */
+    background: rgb(195, 195, 181);
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -57,7 +57,7 @@
     color: rgb(36, 10, 10);
     font-size: 1.1rem;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-     /* border: 1px solid red;  */
+    /* border: 1px solid red;  */
     border: 1px solid rgb(0, 123, 255);
     transition: all 0.3s ease;
 

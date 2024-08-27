@@ -25,7 +25,13 @@ const Carrusel = ({items}) => {
 
   function Banner(){
     return (
-      <div className='Paleta-Colores-banner'>
+      <div className='content-primeraImagen'>
+        <div className='text-primeraImagen'>
+          <h1>Campeón...</h1>
+          <p>¡Bienvenido al emocionante mundo de las rifas y los sorteos! ¿Estas listo para la aventura.? Cada dia en nuestro sitio se despliega un abanico de oportunidades. Imagina un clic, una elección, y podrias ganar 1000$, un auto de última generación o incluso inolvidables sorpresas que tenemos para ti. ¿Te atreves a participar.? La suerte en nuestra comunidad, sopla a favor de todos. ¡Participa ahora y se parte de nuestra historia de exitos!
+
+          </p>
+        </div>
         <Carrusel items={images}/>
       </div>
 
