@@ -4,6 +4,7 @@ import './styles/Selector.css'
 import './styles/Reloj.css'
 import './styles/WinnerWhitme.css'
 import './styles/loader.css'
+import './styles/Premius.css'
 import Navbar from './components/Navbar.jsx'
 import Banner from './components/Banner.jsx'
 import { WinnerWhitme } from './components/WinnerWhitme.jsx'
@@ -16,6 +17,7 @@ import SelectorRifa from './components/SelectorRifa.jsx'
 import SelectorSorteo from './components/SelectorSorteo.jsx'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import FormBuy from './components/FormBuy.jsx'
+import Premius from './components/Premius.jsx'
 
 function App() {
 
@@ -57,6 +59,9 @@ function App() {
             element = {<FormBuy/>}
         />
 
+        <Route path='/Premius'
+            element = {<Premius/>}
+        />
       </Routes>
     </BrowserRouter>
   )

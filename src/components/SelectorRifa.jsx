@@ -3,7 +3,6 @@ import ticketDefinido from '../assets/images/ticke_definido_1.png'
 /* import loader from '../assets/images/loader.gif' */
 import Footer from './Footer.jsx'
 import useFetchBolets from '../scripts/useFetch';
-
 import { useEffect, useState } from 'react';
 
 const arrayRifa = []

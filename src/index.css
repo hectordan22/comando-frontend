@@ -88,15 +88,16 @@ header{
     width: 100%;
     height: 45vw;
     position: relative;
-    /* background: linear-gradient(to right, #f5c347,#f5ab45,#fa7e39,#f5592c,#f53825); *//*1*/
-    background: linear-gradient(to right, #e89a01 12%, #ffb21a, #e89a01 5%); /*2*/
+    margin-top: 3rem;
+    /* background: linear-gradient(to right, #f5c347,#f5ab45,#fa7e39,#f5592c); */
+    background: linear-gradient(to right, #e89a01 12%, #ffb21a, #e89a01 5%);
 }
 .text-primeraImagen{
     width: 28%;
     height: 50%;
     position: absolute;
     left: 5%;
-    top:55%;
+    top:40%;
 }
 .text-primeraImagen h1{
     font-family: "Source Sans 3", sans-serif;
@@ -117,7 +118,7 @@ header{
     position: absolute;
     overflow: hidden;
     right: 5%;
-    top:15%;
+    top:10%;
 }
 .img-carrusel{
     width: 100%;
@@ -355,9 +356,9 @@ header{
     height: 250px;
     position: relative;
     overflow: hidden;
-   /*  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px; */
+    /*box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px; */
     border-radius: 15px;
-   /*  background: rgba(255, 255, 255, 0.056); */
+    /*background: rgba(255, 255, 255, 0.056); */
     
 }
 
@@ -413,8 +414,8 @@ header{
     transition: all 300ms;
     opacity: 0.8;
     border-radius: 5px;
-  /*   box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px; */
-  color: #fff;
+    /*   box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px; */
+    color: #fff;
 }
 
 .card-nosotros:hover .description{
@@ -869,10 +870,6 @@ form > button:hover,
         text-align: left;
        
     }
-
-    /* .logo-header{
-       display: none;
-    } */
     .winner-with-me{
         width: 100%;
         display: flex;
@@ -927,7 +924,7 @@ form > button:hover,
         position: fixed;
         top:0;
        /*  background-color: #030433; */
-       background: linear-gradient(90deg, rgba(33, 44, 49, 0.964) 0%, rgba(21, 45, 76, 0.959) 27%, rgba(40, 47, 64, 0.953) 48%, rgb(24, 43, 62) 90%);
+        background: linear-gradient(90deg, rgba(33, 44, 49, 0.964) 0%, rgba(21, 45, 76, 0.959) 27%, rgba(40, 47, 64, 0.953) 48%, rgb(24, 43, 62) 90%);
         width: 100%;
         height: 100vh;
         right: 0;
@@ -1095,9 +1092,6 @@ form > button:hover,
         font-size: 23px;
         margin-top: 60px;
      }
-    /* .title-last-winner{
-       margin-top: 1.5em;
-    } */
     .data-winner{
         margin: 30px auto;
         width: 70%;
@@ -1139,7 +1133,7 @@ form > button:hover,
         width: 98%;
         height: 79%;
         left: 1%;
-        top: 18%;
+        top: 14%;
     }
 }
 @media (max-width:480px){
@@ -1153,7 +1147,7 @@ form > button:hover,
         width: 100%;
         height: 78%;
         left: .1%;
-        top: 20%;
+        top: 16%;
     }
     .banner-movil img {
         height: 320px;
@@ -1253,7 +1247,7 @@ form > button:hover,
         height: 50vw;
     }
     .banner-container{
-        top: 19%;
+        top: 17%;
     }
     .text-primeraImagen{
         top: 30%;
@@ -1387,7 +1381,7 @@ form > button:hover,
     }
     .banner-container{
         height: 75%;
-        top: 22%;
+        top: 20%;
     }
     .text-primeraImagen{
         top: 25%;
