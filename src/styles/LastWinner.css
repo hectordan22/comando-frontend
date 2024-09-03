@@ -1,0 +1,128 @@
+.container-winner{
+    width: 100%;
+}
+
+.container-winner .type-winner {
+    text-align: center;
+    width: 20%;
+    margin: auto;
+    position: relative;
+    top: 0.7em;
+    padding: 8px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    /* background: rgba(255, 255, 255, 0.07); */
+    background-color: rgba(0, 0, 0, 0.322);
+    color: #f3f3f3d6;
+    font-size: 22px;
+}
+.data-winner{
+    width: 55%;
+    padding: 5px;
+    border-radius: 10px;
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+    left: 5px;
+    background-image: url('/src/assets/images/ticke_definido_1.png');
+    background-position: center;
+    background-size: auto;
+   /*  box-shadow: rgb(100 100 100) 0px -23px 25px 0px inset, rgb(255 255 36) 0px -36px 30px 0px inset, rgb(251 255 0 / 73%) 0px -79px 40px 0px inset, rgb(0 234 225 / 89%) 0px 2px 1px, rgb(0 0 0 / 71%) 0px 4px 2px, rgb(47 46 46 / 81%) 0px 8px 4px, rgb(42 191 234 / 20%) 0px 16px 8px, rgb(202 166 166 / 54%) 0px 32px 16px; */
+   /* box-shadow: rgb(255 0 0 / 61%) 0px 22px 70px 4px; */
+}   
+
+.card-last-winner{
+    width: 40%;
+    margin: 1em auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    border-radius: 10px;
+    backdrop-filter: blur(1rem);
+    background: rgb(84 225 255 / 15%);
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    opacity: 0.7;
+    padding: 18px 8px;
+    height: auto;
+}
+
+
+.number-winner{
+    width: 40%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.number-winner h3 {
+    background: linear-gradient(90deg, rgba(161,152,46,1) 8%, rgba(255,228,74,1) 29%, rgba(255,248,205,1) 50%, rgba(250,255,122,1) 68%, rgba(215,192,56,1) 84%);
+    padding: 25px;
+    border-radius: 50%;
+    height: 50%;
+    width: 20%;
+    font-size: 28px;
+    font-weight: 800;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    margin-top: 20px;
+}
+
+.number-winner h4{
+   position: absolute;
+   top: 15px;
+   font-size: 25px;
+   color: #ffd7ab;
+}
+
+
+.titles-winner p{
+    margin-top: 12px;
+    font-size: 20px;
+    font-weight: bolder;
+    color: #474715;
+    padding: 2px;
+}
+
+
+.values-winner p{
+    margin-top: 12px;
+    font-size: 20px;
+    color: #690404;
+    font-weight: 600;
+}
+
+.title-last-winner{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 50px;
+    height: 90px;
+    margin-bottom: 0.5em;
+    margin-top: 1rem;
+    background: linear-gradient(90deg, #ffefbe, #ff9e91);
+    -webkit-text-fill-color:transparent;
+    -webkit-background-clip:text;
+    -webkit-text-stroke: 2px black;
+}
+
+@media (max-width: 700px) {
+    .title-last-winner {
+        font-size: 2.5rem;
+    }
+}
+@media (max-width: 567px) {
+    .title-last-winner {
+        font-size: 2.2rem;
+    }
+}
+@media (max-width: 502px) {
+    .title-last-winner{
+        font-size: 1.7rem;
+    }
+}

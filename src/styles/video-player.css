@@ -1,0 +1,83 @@
+/* Estilos para la seccion del video de presentacion */
+.section-video{
+    width: 80%;
+    height: 100%;
+    position: relative;
+    margin: 0 auto;
+    border-radius: 1rem;
+}
+.content-video-player{
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+.video-player{
+    width: 60%;
+    height: 360px;
+    overflow: hidden;
+    background-color: black;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+.description-video-player{
+    width: 35%;
+    margin-top: 7%;
+}
+.description-video-player h1{
+    color: #fff;
+    font-size: 20px;
+    font-family: "Source Sans 3", sans-serif;
+    margin-bottom: .5rem;
+}
+.description-video-player p{
+    color: #fff;
+    font-size: 14px;
+    font-family: "Source Sans 3", sans-serif;
+}
+
+
+@media (max-width:720px) {
+    .section-video{
+        width: 87.5%;
+        height: 470px;
+    }
+    .content-video-player{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .video-player {
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+    }
+    .description-video-player{
+        width: 100%;
+        position: absolute;
+        top: 0;
+        margin-top: 0;
+    }
+}
+@media (max-width:620px){
+    .description-video-player h1{
+        margin-bottom: 0;
+    }
+}
+@media (max-width:520px){
+    .section-video{
+        width: 90%;
+        height: 500px;
+    }
+}
+@media (max-width:420px){
+    .description-video-player p{
+        font-size: 14px;
+    }
+}
+@media (max-width:355px){
+    .section-video{
+        height: 550px;
+    }
+}

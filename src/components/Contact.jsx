@@ -4,9 +4,9 @@ function Contact() {
     return (
         <>
             <h1 className="contac-title">Contactate con Nosotros</h1>
-            <div className="container">
+            <div className="container-contact">
                 <div className="box-info">
-                    <div className="data">
+                    <div className="data-contac">
                         <p><i className="fa-solid fa-phone"></i> +1 408 224 4587</p>
                         <p><i className="fa-solid fa-envelope"></i> livingcodedev@gmail.com</p>
                         <p><i className="fa-solid fa-location-dot"></i> 30 Grant Ave San Francisco CA 94108-5834. USA</p>
@@ -37,6 +37,7 @@ function Contact() {
                     <button type="submit">Enviar mensaje</button>
                 </form>
             </div>
+           
         </>
     )
 }

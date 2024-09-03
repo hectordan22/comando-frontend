@@ -34,7 +34,7 @@ export class WinnerWhitme extends React.Component {
                 {
                     title: 'Rifas',
                     description: (
-                        <p><span>¡Participa en Nuestras Emocionantes Rifas!</span><br></br>
+                        <p><span>¡Participa en Nuestras Emocionantes Rifas y gana premios increibles!</span><br></br>
                             -PRIMER PREMIO<br></br>
                             -SEGUNDO PREMIO<br></br>
                             -TERCER PREMIO<br></br>

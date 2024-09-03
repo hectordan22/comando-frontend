@@ -1,7 +1,8 @@
 import dinero from '../assets/images/banner.jpeg'
 import auto from '../assets/images/banner.jpeg'
 import moto from '../assets/images/banner.jpeg'
-import React, { useState } from "react";
+import React, { useEffect } from"react";
+import { Link } from 'react-router-dom';
 
 
 const premios = [
@@ -32,6 +33,13 @@ const premios = [
 
 
 function Premius() {
+    useEffect(() => {
+        window.scrollTo(0, 0); // Desplaza la página hacia arriba
+        document.body.classList.add('no-scroll');
+
+        return document.body.classList.remove('no-scroll');
+    });
+
     return (
         <div className='section-premios'>
             {premios.map((item, index) => {
@@ -43,8 +51,8 @@ function Premius() {
                             <p className='description-premios'>{item.description}</p>
                         </div>
                         <div className='content-button'>
-                            <button><a href="#">Compra Tu Numero</a></button>
-                        </div>
+                            <button><Link className='pathRoute' to="/Rifa">Compra Tu Numero</Link></button>                            
+                      </div>
                     </div>
                 )
             })
