@@ -10,6 +10,7 @@ import './styles/Contact.css'
 import './styles/Premius.css'
 import './styles/video-player.css'
 import './styles/videogallery.css'
+import './styles/Footer.css'
 import Navbar from './components/Navbar.jsx'
 import Banner from './components/Banner.jsx'
 import { WinnerWhitme } from './components/WinnerWhitme.jsx'
@@ -29,27 +30,6 @@ import VideoGallery from './components/VideoGallery.jsx'
 
 
 function App() {
-  const videos = [
-    {
-      id: 1,
-      url: '/video1.mp4',
-      miniatura:'/miniatura1.jpg',
-      title: 'Video 1'
-    },
-    {
-      id: 2,
-      url: '/video2.mp4',
-      miniatura:'/miniatura2.jpg',
-      title: 'Video 2'
-    },
-    {
-      id: 3,
-      url:  '/video3.mp4',
-      miniatura:'/miniatura3.jpg',
-      title: 'Video 3'
-    }
-  ]
-
   return (
     <BrowserRouter>
       <Navbar />
@@ -60,7 +40,6 @@ function App() {
              <VideoPlayer key={3} url={'https://www.youtube.com/watch?v=Ps9VDFSqbQ8'} audioUrl={'https://www.youtube.com/watch?v=Ps9VDFSqbQ8'}/*Si las direcciones se encuentran localmente no es necesario colocarle aqui la url ni el audio *//>,
              <WinnerWhitme key={4} />,
              <LastWinner key={5} />,
-             <VideoGallery key={6} videos={videos}/>,
              <Faqs key={7} />,
              <Contact key={8} />,
              <Footer key = {9}/>,
@@ -94,6 +73,7 @@ function App() {
         <Route path='/Premius'
             element = {<Premius/>}
         />
+        <Route path='/Ganadores' element= {<VideoGallery/>}/>
       </Routes>
     </BrowserRouter>
   )

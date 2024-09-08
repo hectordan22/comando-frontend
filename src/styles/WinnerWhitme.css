@@ -226,7 +226,7 @@
 @media (min-width:320px) and (max-width: 480px){
     .content-winner{
         width: 90%;
-        padding:0
+        padding:0;
     }
     .button-sorteo-more{
         border-bottom-left-radius: 0%;

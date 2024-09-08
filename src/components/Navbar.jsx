@@ -59,8 +59,8 @@ function Navbar() {
           <li onClick={closeMovilNav}><Link className='pathRoute' to="/Rifa">Rifas</Link></li>
           <li onClick={closeMovilNav}><Link className='pathRoute' to="/Sorteo/none">Sorteos</Link></li>
           <li onClick={closeMovilNav}><Link className='pathRoute' to="/Premius">Premios</Link></li>
-          <li onClick={closeMovilNav}><Link className='pathRoute' to="#">Ganadores</Link></li>
-          <li onClick={closeMovilNav}><Link className='pathRoute' to="#">Contacto</Link></li>
+          <li onClick={closeMovilNav}><Link className='pathRoute' to="/Ganadores">Ganadores</Link></li>
+          <li onClick={closeMovilNav}><Link className='pathRoute' to="/">Contacto</Link></li>
           <div className='img-logo-movil'>  </div>
         </ul>
       </div>

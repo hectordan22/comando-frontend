@@ -23,7 +23,7 @@ const VideoPlayer = ({url, audioUrl}) => {
         <section className='section-video'>
             <div className="content-video-player">          
                 <div className="video-player" onClick={handleClick}>
-                    <ReatPlayer url = {url} playing loop /*muted*/ width= '100%' height='100%'/>
+                    <ReatPlayer url = {url} playing /*loop*/ controls/*muted*/ width= '100%' height='100%'/>
                     <audio ref={audioRef} src={audioUrl}/>
                 </div>
                 <div className="description-video-player">

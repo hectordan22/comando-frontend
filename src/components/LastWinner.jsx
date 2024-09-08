@@ -1,3 +1,4 @@
+import VideoPlayer from './VideoPlayer.jsx'
 
 function LastWinner() {
 
@@ -26,6 +27,7 @@ function LastWinner() {
                  <p>Valera Avanida 3</p>
                </div>
             </div>
+            {/* <VideoPlayer url={} audioUrl={}/> */}
          </div>
     </div>
 

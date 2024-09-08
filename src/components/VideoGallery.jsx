@@ -1,8 +1,33 @@
 import React, { useState } from "react";
 import ReactPlayer from "react-player";
 
-const VideoGallery = ({videos}) => {
+import prueba from '../assets/images/carro.jpg';
+import prueba2 from '../assets/images/sorteo.jpg';
+
+
+const VideoGallery = () => {
     const [currentVideo, setCurrentVideo] = useState(null);
+
+    const videos = [
+        {
+          id: 1,
+          url: '/video1.mp4',
+          miniatura: {prueba},
+          title: 'Video 1'
+        },
+        {
+          id: 2,
+          url: '/video2.mp4',
+          miniatura:'../assets/images/sorteo.jpg',
+          title: 'Video 2'
+        },
+        {
+          id: 3,
+          url:  '/video3.mp4',
+          miniatura:'/miniatura3.jpg',
+          title: 'Video 3'
+        }
+    ]
 
     const handleVideoClick = (video) => {
         setCurrentVideo(video);

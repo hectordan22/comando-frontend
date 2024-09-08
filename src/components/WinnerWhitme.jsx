@@ -73,9 +73,7 @@ export class WinnerWhitme extends React.Component {
                                  {
                                   item.title === 'Sorteos' ?  <Reloj type='sorteo' key={index} /> :  <Reloj type='rifa' dateRifa={item.fechaRifa} horaRifa={item.horaRifa} key={index} />
                                  } 
-                                </div>
-                               
-                               
+                                </div>                              
                             </div>
                         )
                     })
