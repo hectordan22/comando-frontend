@@ -39,11 +39,10 @@ function App() {
              <h1 key={2} className='title-winner-withme'>Ganar Es Facil Con Nosotros</h1>,
              <VideoPlayer key={3} url={'https://www.youtube.com/watch?v=Ps9VDFSqbQ8'} audioUrl={'https://www.youtube.com/watch?v=Ps9VDFSqbQ8'}/*Si las direcciones se encuentran localmente no es necesario colocarle aqui la url ni el audio *//>,
              <WinnerWhitme key={4} />,
-             <LastWinner key={5} />,
+            //  <LastWinner key={5} />,
              <Faqs key={7} />,
              <Contact key={8} />,
              <Footer key = {9}/>,
-             
         ]}/>
         
         {/*Cambiar la fecha(dateRifa) despues la rifa*/}

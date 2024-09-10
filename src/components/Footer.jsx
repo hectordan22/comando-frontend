@@ -7,14 +7,7 @@ function Footer() {
             <div className="footer-left">
                 <h3>El comando de los <span>Premios</span></h3>
 
-                <p className="footer-links">
-                    <a href="#">Home</a>
-                    |
-                    <a href="#">About</a>
-                    |
-                    <a href="#">Contact</a>
-                    |
-                    <a href="#">Blog</a>
+                <p className="footer-links"><a href="#">Home</a> | <a href="#">About </a> | <a href="#">Contact </a> | <a href="#">Blog</a>
                 </p>
 
                 <p className="footer-company-name">Copyright © 2021 <strong>SagarDeveloper</strong> All rights reserved</p>

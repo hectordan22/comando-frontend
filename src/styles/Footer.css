@@ -47,7 +47,6 @@
     text-decoration: none;
     color: #e0ac1c;
 }
-
 .footer-distributed .footer-company-name {
     color: #8f9296;
     font-size: 14px;
@@ -190,14 +189,16 @@
 @media (max-width:480px) {
     .footer-distributed{
         padding: 0;
+        width: 100%;
     }
     
     .footer-distributed .footer-left,
     .footer-distributed .footer-center,
     .footer-distributed .footer-right {
         display: block;
-        width: 100%;
+        width: 90%;
         text-align: center;
+        margin: 0 auto;
     }
     .footer-left h3 {
         font-size: 16px;

@@ -1,7 +1,4 @@
 /* Seccion para contactanos*/
-/* .contact{
-    width: 100%;
-} */
 .container-contact {
     display:grid;
     grid-template-columns: repeat(2,50%);
@@ -146,7 +143,6 @@ form > button {
     outline: none;
     background-color: #a7dbf978;;
     color:#02142fb1;
-    border:none;
     transition: .1s;
     cursor: pointer;
     font-size: 1.1rem;
