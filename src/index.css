@@ -11,7 +11,6 @@
 }
 
 body{
-    border-bottom: 2px solid #000;
     font-family: "Source Sans 3", sans-serif;
     background: linear-gradient(90deg, rgb(26, 36, 40) 0%, rgb(15, 35, 62) 27%, rgb(40, 48, 65) 48%, rgb(14, 26, 39) 90%);
 }

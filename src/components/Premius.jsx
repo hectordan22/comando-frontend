@@ -1,3 +1,4 @@
+import Footer from './Footer';
 import dinero from '../assets/images/banner.jpeg'
 import auto from '../assets/images/banner.jpeg'
 import moto from '../assets/images/banner.jpeg'
@@ -41,23 +42,26 @@ function Premius() {
     });
 
     return (
-        <div className='section-premios'>
-            {premios.map((item, index) => {
-                return (
-                    <div key={index} className='content-padre-premios'>
-                        <div className='contentImg-premios'><img src={item.img} alt={item.name} /></div>
-                        <div className='contentDesciption-premios'>
-                            <h1>{item.name}</h1>
-                            <p className='description-premios'>{item.description}</p>
+        <>
+            <div className='section-premios'>
+                {premios.map((item, index) => {
+                    return (
+                        <div key={index} className='content-padre-premios'>
+                            <div className='contentImg-premios'><img src={item.img} alt={item.name} /></div>
+                            <div className='contentDesciption-premios'>
+                                <h1>{item.name}</h1>
+                                <p className='description-premios'>{item.description}</p>
+                            </div>
+                            <div className='content-button'>
+                                <button><Link className='pathRoute' to="/Rifa">Compra Tu Numero</Link></button>                            
                         </div>
-                        <div className='content-button'>
-                            <button><Link className='pathRoute' to="/Rifa">Compra Tu Numero</Link></button>                            
-                      </div>
-                    </div>
-                )
-            })
-            }
-        </div>
+                        </div>
+                        )
+                    })
+                }
+            </div>
+            <Footer/>
+        </>
     )
 }
 
