@@ -7,7 +7,7 @@ import './styles/Loader.css'
 import './styles/LastWinner.css'
 import './styles/Faqs.css'
 import './styles/Contact.css'
-import './styles/Premius.css'
+import './styles/Awards.css'
 import './styles/video-player.css'
 import './styles/videogallery.css'
 import './styles/Footer.css'
@@ -23,9 +23,11 @@ import SelectorRifa from './components/SelectorRifa.jsx'
 import SelectorSorteo from './components/SelectorSorteo.jsx'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import FormBuy from './components/FormBuy.jsx'
-import Premius from './components/Premius.jsx'
+import Awards from './components/Awards.jsx'
 import VideoPlayer from './components/VideoPlayer.jsx'
 import VideoGallery from './components/VideoGallery.jsx'
+
+import videoPrueba from './assets/videos/video-10-9-2024.mp4';
 
 
 
@@ -37,9 +39,9 @@ function App() {
         <Route path='/' element={[
              <Banner key={1}/>,
              <h1 key={2} className='title-winner-withme'>Ganar Es Facil Con Nosotros</h1>,
-             <VideoPlayer key={3} url={'https://www.youtube.com/watch?v=Ps9VDFSqbQ8'} audioUrl={'https://www.youtube.com/watch?v=Ps9VDFSqbQ8'}/*Si las direcciones se encuentran localmente no es necesario colocarle aqui la url ni el audio *//>,
+             <VideoPlayer key={3} url={videoPrueba}/>,/*Si las direcciones se encuentran localmente no es necesario colocarle aqui la url ni el audio */
              <WinnerWhitme key={4} />,
-            //  <LastWinner key={5} />,
+             <LastWinner key={5} />,
              <Faqs key={7} />,
              <Contact key={8} />,
              <Footer key = {9}/>,
@@ -70,7 +72,7 @@ function App() {
         />
 
         <Route path='/Premius'
-            element = {<Premius/>}
+            element = {<Awards/>}
         />
         <Route path='/Ganadores' element= {<VideoGallery/>}/>
       </Routes>

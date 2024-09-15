@@ -163,10 +163,10 @@
     position: absolute;
     bottom: -3px;
     width: 100%;
+    height: 92px;
     background-color: rgba(0, 0, 0, 0.227);
     font-size: 35px;
     font-weight: 600;
-    height: 92px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -180,14 +180,74 @@
 }
 
 .btn-more-winner{
+    position: relative;
     background: linear-gradient(to right, #e89a01 12%, #ffb21a, #e89a01 5%);
-    color: rgb(26, 36, 40);
+    /* color: rgb(26, 36, 40); */
+    color: #fff;
     padding: 3px;
     width: 230px;
-    text-align: center;
+    height: 50px;
     border-radius: 5px;
     cursor: pointer;
+    transition: all .45s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+.btn-more-winner:hover{
+    scale: 1.1;
+}
+.btn-more-winner span{
+    display: inline-block;
+    transition: transform .45s ease;
+    text-align: center;
+}
+.btn-more-winner:hover > span{
+    transform: translateX(-20%);
+}
+.btn-more-winner i{
+    position: absolute;
+    top: 0;
+    right: 25%;
+    opacity: 0;
+    transition: all .45s ease-in-out;
+    animation: displacement-arrow-negative .45s 1 linear; 
+}
+.btn-more-winner i::before{
+    position: absolute;
+    content: "\ffeb";
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: transparent;
+    color:#fff;
+    font-size: 48px;
+    top: 5%;
+}
+.btn-more-winner:hover > i{
+    opacity: 1;
+    color: rgb(26, 36, 40);
+    animation: displacement-arrow .45s 1 linear;
+}
+@keyframes displacement-arrow{
+    0%{
+        top: 0;
+        right: 30%;
+    }
+    100%{
+        top: 0;
+        right: 25%;
+    }
+}
+@keyframes displacement-arrow-negative{
+    0%{
+        top: 0;
+        right: 25%;
+    }
+    100%{
+        top: 0;
+        right: 30%;
+    }
+}
+
 @media (max-width:720px) {
     .father-winner{
         flex-direction: column;

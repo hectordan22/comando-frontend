@@ -3,28 +3,35 @@ import ReatPlayer from 'react-player';
 
 
 /*En caso de un video*/
-const VideoPlayer = ({url, audioUrl}) => {
-    const audioRef = useState(null);
+const VideoPlayer = ({url}) => {
+    const [currentVideo, setCurrentVideo] = useState(null);
+    const [isVideoPlayig, setIsVideoPlaying] = useState(false);
+    // const audioRef = useRef(null);
 
-    useEffect(()=>{
-        if(audioRef.current){
-            audioRef.current.pause()
-            audioRef.current.load()
-        }
-    },[url, audioUrl]);
+    // useEffect(()=>{
+    //     if(audioRef.current){
+    //         audioRef.current.pause()
+    //         audioRef.current.load()
+    //     }
+    // },[url, audioUrl]);
     
-    const handleClick = () => {
-        if(audioRef.current){
-            audioRef.current.play();
-        };
+    const handleClick = (video) => {
+        setCurrentVideo(video);
+        /*Trabajar con el video */
+        // if(audioRef.current){
+        //     audioRef.current.play();
+        // };
+        if(currentVideo){
+            setIsVideoPlaying(true)
+        }
     };
 
     return (
         <section className='section-video'>
             <div className="content-video-player">          
                 <div className="video-player" onClick={handleClick}>
-                    <ReatPlayer url = {url} playing /*loop*/ controls/*muted*/ width= '100%' height='100%'/>
-                    <audio ref={audioRef} src={audioUrl}/>
+                    <ReatPlayer url = {url} playing={isVideoPlayig} controls width= '100%' height='100%'/>
+                    {/* <audio ref={audioRef} src={audioUrl}/> */}
                 </div>
                 <div className="description-video-player">
                     <h1>Mira como puedes tener mas oportunidad de ganar</h1>

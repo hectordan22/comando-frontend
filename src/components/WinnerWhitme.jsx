@@ -61,7 +61,7 @@ export class WinnerWhitme extends React.Component {
                                     <img src={item.title ==='Sorteos' ? tambor : ''} alt={item.title} />
                                     {item.title === 'Sorteos'? <Balls/> : <CartonRifa/> }
                                     <div className='button-sorteo-more'>
-                                    <Link className='btn-more-winner' to={item.path}>{ item.title }</Link>
+                                        <Link className='btn-more-winner' to={item.path}> <span>{ item.title }</span><i></i></Link>                                      
                                     </div>
                                 </div>
 

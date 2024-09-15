@@ -154,12 +154,7 @@ form > button {
 form > button:hover,
 .links > a:hover {
     background: rgba(0, 0, 0, 0.281);
-    color:#fffffff5;
-     
-}
-
-.links > a:hover i {
-    color:rgba(242, 230, 232, 0.477); ;
+    color:#fffffff5;   
 }
 
 @keyframes shake { 
