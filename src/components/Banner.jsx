@@ -2,32 +2,38 @@ import inicioBanner from '../assets/images/winner-inicio.jpg'
 import prueba2 from '../assets/images/sorteo.jpg'
 import prueba3 from '../assets/images/iconLogo.png'
 import dinero from '../assets/images/banner.jpeg'
-import { useState} from 'react';
-
+import { useState, useEffect } from 'react';
 
 const images = [inicioBanner, prueba2,prueba3,dinero]
-function Banner() {
-  const [position, setPosition ] = useState(2)
-
-    const nextItem = () => {
-      setTimeout(() => {
-        setPosition((position) => position === images.length - 1 ? 0 : position + 1)
-       
-      }, 3000);
-      
-  }
-    return (
-      <div>
-          <div className="banner-container" >
-          <img src={images[position]} onLoad={nextItem} />
-         {/*  <span className="description-banner-desktop" >
-              Puedes ser el proximo Ganador
-          </span> */}
-      </div>
-      </div>
-    )
+const Carrusel = ({items}) => {
+  const [activarIndice, setActivarIndice] = useState(0);
+  useEffect(()=>{
+    const interval = setInterval(()=>{
+      setActivarIndice((anterior) =>(anterior + 1) % items.length)
+    },5000);
+    return ()=> clearInterval(interval);
+  },[items]);
   
-    
+  return(
+    <div className='banner-container'>
+      {items.map((imagenUrl,index)=>(
+        <img src={imagenUrl} alt={`Imagen-banner ${index}`} key={index} className={`img-carrusel ${index ===activarIndice ? 'active':''}`} />
+      ))}
+    </div>
+  )
 }
+  function Banner(){
+    return (
+      <div className='content-primeraImagen'>
+        <div className='text-primeraImagen'>
+          <h1>¡Bienvenido al emocionante mundo de las rifas y los sorteos!</h1>
+          <p>¿Te atreves a participar.? La suerte en nuestra comunidad, sopla a favor de todos. ¡Participa ahora y se parte de nuestra historia de exitos!
+          </p>
+        </div>
+        <Carrusel items={images}/>
+      </div>
+
+    )
+  }
 
 export default Banner

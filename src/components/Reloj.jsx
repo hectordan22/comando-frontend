@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 
 function Reloj({ type, dateRifa, horaRifa }) {
@@ -48,7 +48,7 @@ function Reloj({ type, dateRifa, horaRifa }) {
     };
 
     const countdownSorteo = () => {
-         setInterval(() => {
+        setInterval(() => {
             let { hora, segundos, minutos } = timeSorteo
             let nueva_hora = new Date();
             //Hora del Sorteo todos los dias a las 18:00 pm 
@@ -74,14 +74,17 @@ function Reloj({ type, dateRifa, horaRifa }) {
     };
 
 
-    if (type === 'sorteo') {
-        //Hora del Sorteo todos los dias a las 18:00 pm 
-        countdownSorteo()
-
-    } else {
-        /*Cambiar la fecha para la rifa */
-        countdown(`${dateRifa}, ${horaRifa}:00 GMT-4`);
-    }
+    useEffect(()=>{
+        if (type === 'sorteo') {
+            //Hora del Sorteo todos los dias a las 18:00 pm 
+            countdownSorteo()
+    
+        } else {
+            /*Cambiar la fecha para la rifa */
+            countdown(`${dateRifa}, ${horaRifa}:00 GMT-4`);
+        }
+    },[type])
+   
      
     if (type === 'sorteo') {
         return (

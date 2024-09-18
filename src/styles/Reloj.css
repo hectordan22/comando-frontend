@@ -3,29 +3,26 @@
     border: solid 10px rgb(50, 50, 50);
     border-radius: 35px;
     font-family: 'Digital Numbers', sans-serif;
-    font-size: 30px;
-   /*  color: rgb(255, 125, 125); */
-   color:rgba(168,142,42,255);
-    /* text-shadow: 0 0 10px red; */
+    font-size: 35px;
+    color:rgba(168,142,42,255);
     text-shadow: 0 0 10px rgb(255, 17, 0);
     background-color: rgb(0, 0, 0);
-    box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 5);
+    box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 5);
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 90%;
-    margin: 2rem auto;
-    
+    width: 95%;
+    margin: .5rem auto; 
+    padding: 12px 0;
   }
 
   .countdown span {
     text-align: center;
     position: relative;
     display: inline-block;
-    width: 24%;
-    height: 60px;
-    padding-bottom: 10px;
-    margin-top: 2.5rem;
+    width: 28%;
+    height: 100px;
+    font-size: 35px;
   }
   
   .countdown span::after {
@@ -62,34 +59,47 @@
   .timeTitle{
     color: #fff;
     text-align: center;
-    font-size: 26px;
+    font-size: 27px;
+    margin-top: 1rem;
   }
 
-  @media(min-width: 450px){
+  
+  @media(max-width: 720px){
     .countdown{
-        padding: 18px;
-        width:380px;
-        align-items: start;
-        font-size: 50px;
+      padding: 12px;
+      width:340px;
+      align-items: start;
+      font-size: 40px;
+      height: 80px;
     }
-    .countdown span{
-        height: 110px;
-        margin-top: 0;
-    }
-    .countdown span::before {
-        font-size: 20px;
-    }
+  }
+
+
+@media(max-width: 480px){
+  .timeTitle{
+    font-size: 20px;
+  }
+  .countdown{
+    width: 80%;
+    margin: 1rem auto;
+  }
+  .countdown span{
+    font-size: 35px;
+    height: 80px;
+  }
+  .countdown span::before {
+    font-size: 16px;
+  }  
 }
 
- @media(min-width:980px){
-    .countdown{
-        width:360px;
-    }
-} 
-
-@media(min-width:1024px){
+@media(max-width: 400px){
   .countdown{
-      width:400px;
+    width: 80%;
   }
-} 
- 
+  .countdown span{
+    font-size: 28px;
+  }
+  .countdown span::before {
+    font-size: 15px;
+  } 
+}

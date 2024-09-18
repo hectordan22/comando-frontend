@@ -4,42 +4,53 @@ import './styles/Selector.css'
 import './styles/Reloj.css'
 import './styles/WinnerWhitme.css'
 import './styles/loader.css'
+import './styles/LastWinner.css'
+import './styles/Faqs.css'
+import './styles/Contact.css'
+import './styles/Awards.css'
+import './styles/video-player.css'
+import './styles/videogallery.css'
+import './styles/Footer.css'
 import Navbar from './components/Navbar.jsx'
 import Banner from './components/Banner.jsx'
 import { WinnerWhitme } from './components/WinnerWhitme.jsx'
 import LastWinner from './components/LastWinner.jsx'
-import WeAbout from './components/WeAbout.jsx'
 import { Faqs } from './components/Faqs.jsx'
 import Footer from './components/Footer.jsx'
 import Contact from './components/Contact.jsx'
-// import SelectorTicket from './components/SelectorTicket.jsx'
 import Reloj from './components/Reloj.jsx'
 import SelectorRifa from './components/SelectorRifa.jsx'
 import SelectorSorteo from './components/SelectorSorteo.jsx'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import FormBuy from './components/FormBuy.jsx'
+import Awards from './components/Awards.jsx'
+import VideoPlayer from './components/VideoPlayer.jsx'
+import VideoGallery from './components/VideoGallery.jsx'
+
+import videoPrueba from './assets/videos/video-10-9-2024.mp4';
+
+
 
 function App() {
-
   return (
     <BrowserRouter>
       <Navbar />
       <Routes>
         <Route path='/' element={[
-             <Banner key={1} />,
-             <h1 key={9} className='title-winner-withme'>Gana dinero con Nosotros</h1>,
-             <WinnerWhitme key={2} />,
+             <Banner key={1}/>,
+             <h1 key={2} className='title-winner-withme'>Ganar Es Facil Con Nosotros</h1>,
+             <VideoPlayer key={3} url={videoPrueba}/>,/*Si las direcciones se encuentran localmente no es necesario colocarle aqui la url ni el audio */
+             <WinnerWhitme key={4} />,
              <LastWinner key={5} />,
-             <WeAbout key={6} />,
              <Faqs key={7} />,
-             <Contact key={8} />
-   
+             <Contact key={8} />,
+             <Footer key = {9}/>,
         ]}/>
         
         {/*Cambiar la fecha(dateRifa) despues la rifa*/}
         <Route path='/Rifa'
            element = {[
-            <div key={1} className='cont-app-reloj'><Reloj type='rifa' dateRifa='06/29/2024' horaRifa='6:00' /></div>,
+            <div key={1} className='cont-app-reloj'><Reloj type='rifa' dateRifa='09/29/2024' horaRifa='6:00' /></div>,
             <h2 className='titleSelector'  key={2}>Elige y Compra Ahora mismo tu numero y Participa en Nuestra Gran Rifa</h2>,
             <SelectorRifa key={3} />
            ]
@@ -60,9 +71,11 @@ function App() {
             element = {<FormBuy/>}
         />
 
+        <Route path='/Premius'
+            element = {<Awards/>}
+        />
+        <Route path='/Ganadores' element= {<VideoGallery/>}/>
       </Routes>
-
-      <Footer />
     </BrowserRouter>
   )
 }

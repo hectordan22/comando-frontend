@@ -1,11 +1,11 @@
-import carro from '../assets/images/carro.jpg'
-import sorteo from '../assets/images/sorteo.jpg'
+// import carro from '../assets/images/carro.jpg'
+// import sorteo from '../assets/images/sorteo.jpg'
 import Reloj from './Reloj'
-
+import Balls from './Balls'
 import React from 'react'
-
-
+import tambor from '../assets/images/Tambor5.png'
 import { Link } from 'react-router-dom'
+import CartonRifa from './Carton'
 
 
 export class WinnerWhitme extends React.Component {
@@ -23,15 +23,26 @@ export class WinnerWhitme extends React.Component {
             data: [
                 {
                     title: 'Sorteos',
-                    description: 'Con un pago movil unicamente a traves de la plataforma',
+                    description: (
+                        <p><span>SORTEOS EPICOS: ¡Descubre tu suerte y conviertete en un ganador!</span><br></br>
+                        Los sorteos se realizan a diario a las 6pm y se transmite en vivo. La cantidad de dinero para el ganador depende del numero de participantes.<br></br>
+                        No te quedes por fuera compra tu ticket ya.!
+                        </p>
+                    ),
                     path: '/Sorteo/none'
                 },
                 {
                     title: 'Rifas',
-                    description: 'Los sorteos se realizan a diario a las 6pm y se transmite en vivo. La cantidad de dinero para el ganador depende del numero de participantes que compraron tickets',
+                    description: (
+                        <p><span>¡Participa en Nuestras Emocionantes Rifas y gana premios increibles!</span><br></br>
+                            -PRIMER PREMIO<br></br>
+                            -SEGUNDO PREMIO<br></br>
+                            -TERCER PREMIO<br></br>
+                            Además de muchos premios sorpresa ¡Participa Ahora!</p>
+                    ),
                     path: '/Rifa',
                     horaRifa:'6:00',
-                    fechaRifa:'06/29/2024'
+                    fechaRifa:'10/29/2024'
                     /*Cambiar la fecha(fechaRifa) despues la rifa*/
                 }
 
@@ -47,22 +58,22 @@ export class WinnerWhitme extends React.Component {
                         return (
                             <div className='content-winner' key={index}>
                                 <div className='content-image'>
-                                    <img src={item.title ==='Sorteos' ? sorteo : carro} alt={item.title} />
+                                    <img src={item.title ==='Sorteos' ? tambor : ''} alt={item.title} />
+                                    {item.title === 'Sorteos'? <Balls/> : <CartonRifa/> }
                                     <div className='button-sorteo-more'>
-                                    <Link className='btn-more-winner' to={item.path}>{ item.title }</Link>
+                                        <Link className='btn-more-winner' to={item.path}> <span>{ item.title }</span><i></i></Link>                                      
                                     </div>
                                 </div>
+
                                 <div className='content-description'>
-                                    <p>{item.description}</p>
+                                    {item.description}
                                 </div>
 
                                 <div className='content-reloj'>
                                  {
                                   item.title === 'Sorteos' ?  <Reloj type='sorteo' key={index} /> :  <Reloj type='rifa' dateRifa={item.fechaRifa} horaRifa={item.horaRifa} key={index} />
                                  } 
-                                </div>
-                               
-                               
+                                </div>                              
                             </div>
                         )
                     })

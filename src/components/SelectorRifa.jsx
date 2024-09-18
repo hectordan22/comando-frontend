@@ -1,10 +1,9 @@
 import arrowCircle from '../assets/images/arrow-circle-next.png'
 import ticketDefinido from '../assets/images/ticke_definido_1.png'
 /* import loader from '../assets/images/loader.gif' */
-
+import Footer from './Footer.jsx'
 import useFetchBolets from '../scripts/useFetch';
-
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const arrayRifa = []
 let totalRifas = 0
@@ -83,8 +82,15 @@ function SelectorRifa() {
         }
     }
 
+    useEffect(() => {
 
-
+        if (loading || error || data.error) {
+            window.scrollTo(0, 0); // Desplaza la página hacia arriba
+            document.body.classList.add('no-scroll')
+        }
+        return () => document.body.classList.remove('no-scroll')
+    }, [error, loading, data])
+    
 
     let initRangeRifa = data ? arrayRifa[countRifa].init : 0
     let finishRangeRifa = data ? arrayRifa[countRifa].finish : 0
@@ -105,8 +111,8 @@ function SelectorRifa() {
     }
 
     if (error || data.error ) {
-        return(
-            <div className='bg-popup-error'>
+        return( 
+            <div className='bg-popup-error' id='bg-popup-error'>
               <div className='body-popup-error'>
                    <span className='span-icon-error'>&#128534;</span>
                   <p className='title-error-popup'>Algo salio mal</p>
@@ -186,6 +192,7 @@ function SelectorRifa() {
                 </div>
                 <button type="button" onClick={Comprar} className="btn-comprar-Sorteo">Comprar</button>
             </div>
+            <Footer/>
         </>
     )
 }
