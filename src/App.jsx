@@ -34,8 +34,6 @@ import { useEffect } from 'react'
 import { useInitialStore } from './store/useGlobalData.js'
 
 let videoPrueba = ''
-let fechaRifa = ''
-let horaRifa = ''
 
 function App() {
 

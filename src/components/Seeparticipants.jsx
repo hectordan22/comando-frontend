@@ -1,11 +1,12 @@
 import React from "react";
 import Poster from "../assets/images/Poster1.png"
+import { useInitialStore } from '../store/useGlobalData';
 
-const baseDatos = Array(50)
+const baseDatos = 0
 
 
 function DataDisplay(data){
-    const dataLength = data.length;
+    const dataLength = data;
 
     if(dataLength < 100){
         return(
@@ -52,10 +53,11 @@ function DataDisplay(data){
 
 
 function Seeparticipants(){
+    const {dataInicial} = useInitialStore((state) => state)
     return(
         <div className="content-seeparticipants">
             <img src={Poster} alt="poster" />
-            {DataDisplay(baseDatos)}
+            { dataInicial && DataDisplay(dataInicial.participandoSorteo)}
         </div>
     )
 }
