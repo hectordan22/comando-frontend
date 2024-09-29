@@ -32,18 +32,31 @@
     color: rgba(255, 255, 255, 0.1);
     text-shadow: none;
   }
+  .countdown #dayElement,
+  .countdown #hourElement,
+  .countdown #minElement,
+  .countdown #secElement{
+    position: relative;
+  }
   .countdown #dayElement::before {
     content: 'DAYS';
+    position: absolute;
+    left: 20%;
   }
   .countdown #hourElement::before {
     content: 'HOURS';
+    position: absolute;
+    left: 20%;
   }
   .countdown #minElement::before {
     content: 'MINS';
-    left: 20%;
+    position: absolute;
+    left: 25%;
   }
   .countdown #secElement::before {
     content: 'SECS';
+    position: absolute;
+    left: 30%;
   }
   .countdown span::before {
     position: absolute;
@@ -61,6 +74,7 @@
     text-align: center;
     font-size: 27px;
     margin-top: 1rem;
+    width: 90%;
   }
 
   

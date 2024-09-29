@@ -1,7 +1,12 @@
+.content-export-video-gallery{
+    width: 100%;
+    height: 100%; 
+    margin-top: 20vh;
+}
 .video-gallery {
     width: 100%;
     height: 100%;
-    margin-top: 20vh;
+    margin-top: 4rem;
 }
 
 .video-miniatura {
@@ -14,7 +19,7 @@
 
 .title-video-gallery {
     width: 90%;
-    margin: 1rem auto;
+    margin: 2.5rem auto;
     text-align: center;
     font-size: 2.5rem;
     -webkit-text-stroke: 1.5px black;

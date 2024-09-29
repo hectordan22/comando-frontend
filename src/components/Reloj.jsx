@@ -77,7 +77,6 @@ function Reloj({ type }) {
         }, 1000)
     };
 
-
     useEffect(()=>{
         if (type === 'sorteo') {
             //Hora del Sorteo todos los dias a las 18:00 pm 

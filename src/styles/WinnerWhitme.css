@@ -144,7 +144,7 @@
         transform: scale(1);
     }
 }
-.check2::after{
+.check-Inicio::after{
     content: "✔️";
     position: absolute;
     display: flex;
@@ -215,12 +215,12 @@
 }
 .btn-more-winner i::before{
     position: absolute;
-    content: "\ffeb";
+    content: "\2BA9";
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: transparent;
     color:#fff;
-    font-size: 48px;
-    top: 5%;
+    font-size: 38px;
+    top: 2px;
+    transform: rotate(-5deg);
 }
 .btn-more-winner:hover > i{
     opacity: 1;

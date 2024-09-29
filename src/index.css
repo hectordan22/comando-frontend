@@ -47,15 +47,60 @@ header{
 }
 .nav-menu li{
     margin-right: 1rem; 
+    position: relative;
+    transition: all 0.3s ease;
+    height: 35px;
+}
+.nav-menu li::after{
+    position: absolute;
+    content: "\2BC5";
+    text-align: center;
+    width: 100%;
+    height: 50%;
+    border-bottom:5px solid #e89a01;
+    color: #e89a01;
+    bottom: -10%;
+    left: 0;
+    opacity: 0;
+}
+.nav-menu li:hover::after{
+    animation: stiking forwards 0.3s;
+    opacity: 1;
+}
+@keyframes stiking {
+    0%{
+        width: 0;
+        
+    }
+    100%{
+        opacity: 1;
+        width: 100%;
+    }
 }
 .nav-menu a{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
     color: #fff;
+    /* cursor: url("./assets/images/cursor.png"), auto; */
 }
-.nav-menu li:last-child{
-    background:#4ad295;
-    padding: .25rem .75rem;
-    border-radius: .2rem;
+.nav-menu .pathRoute-focus{
+    width: 100%;
+    height: 100%;
+    color: #e89a01;
 }
+.nav-menu .pathRoute-focus::after{
+    position: absolute;
+    content: "\2BC5";
+    text-align: center;
+    width: 100%;
+    height: 50%;
+    border-bottom:5px solid #e89a01;
+    color: #e89a01;
+    bottom: -10%;
+    left: 0;
+}
+
 .menu-icon img{
     width: 40px;
     height: 40px;
@@ -372,6 +417,7 @@ header{
         font-size: 23px;
         
     }
+    
     .showUl{
         left: 0;
         transition: all .3s ease;
@@ -396,6 +442,7 @@ header{
 @media (min-width:980px) and (max-width: 1200px){
     .content-primeraImagen{
         height: 50vw;
+        margin-top: 22px;
     }
     .banner-container{
         top: 15%;
@@ -438,6 +485,7 @@ header{
 @media (min-width:700px) and (max-width: 980px){
     .content-primeraImagen{
         height: 55vw;
+        margin-top: 25px;
     }
     .banner-container{
         height: 75%;

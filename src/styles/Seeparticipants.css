@@ -1,0 +1,134 @@
+.content-seeparticipants{
+    width: 60%;
+    height: 380px;
+    margin: 2rem auto;
+    position: relative;
+    border-radius: 1rem;
+    box-shadow: 0 0 15px rgba(0, 0, 0, .8);
+}
+.content-seeparticipants img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    z-index: -999;
+    opacity: 1;
+}
+.content-see{
+    position: relative;
+    width: 60%;
+    height: 85%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 1rem;
+    top: 10%;
+    left: 20%;
+    background: rgba(0, 0, 0, .6);
+    box-shadow: 0 0 15px rgba(0, 0, 0, .8);
+}
+.content-see h1{
+    color: #fff;
+    text-align: center;
+    font-size: 26px;
+    margin-top: .5rem;
+}
+.content-see p{
+    color: #fff;
+    border-radius: 1rem;
+    text-align: center;
+    width: 50%;
+}
+.content-see span{
+    color: #fc7303;
+    font-size: 52px;
+    font-weight: bolder;
+    text-shadow: -2px -2px 0 white, 2px 2px 0 white, -2px 2px 0 white, 2px -2px 0 white;
+}
+
+.content-see h2{
+    width: 80%;
+    color: #fc7303;
+    font-size: 24px;
+    text-align: center;
+    text-shadow: -1px -1px 0 white, 1px 1px 0 white, -1px 1px 0 white, 1px -1px 0 white;
+    margin-top: .5rem;
+}
+@media (max-width:1200px){
+    .content-see{
+        width: 80%;
+        height: 90%;
+        top: 5%;
+        left: 10%;
+    }
+}
+@media (max-width:980px) {
+    .content-seeparticipants{
+        width: 75%;
+    }
+    .content-see{
+        width: 80%;
+        height: 90%;
+        top: 5%;
+        left: 10%;
+    }
+}
+@media (max-width:700px) {
+    .content-seeparticipants{
+        width: 85%;
+    }
+    .content-see{
+        width: 80%;
+        height: 90%;
+        top: 5%;
+        left: 10%;
+    }
+    .content-see p{
+        width: 50%;
+    }
+    .content-see h2{
+        font-size: 20px;
+    }
+}
+@media (max-width:600px) {
+    .content-see p{
+        width: 90%;
+    }
+    .content-see h2{
+        font-size: 20px;
+    }
+}
+@media (max-width:480px) {
+    .content-seeparticipants{
+        width: 95%;
+    }
+    .content-see{
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+    .content-see h1{
+        font-size: 22px;
+    }
+    .content-see p{
+        width: 50%;
+    }
+    .content-see h2{
+        width: 95%;
+    }
+}
+@media (max-width:380px){
+    .content-see span{
+        font-size: 42px;
+    }
+    .content-see p{
+        width: 95%;
+    }
+    .content-see h2{
+        font-size: 20px;
+    }
+}
+

@@ -37,6 +37,9 @@
     transform: translateY(-50px);
     margin-left: .5rem;
 }
+.number-winner-video-false{
+    transform: translateY(10px);
+}
 .number-winner h3,
 .number-winner h5{
     font-family: "Source Sans 3", sans-serif;
@@ -78,13 +81,36 @@
     border-radius: 10px;
     margin: auto;
     display: inline-block;
-    position: relative;
     background: linear-gradient(90deg, rgb(206, 193, 58) 8%, rgba(255,228,74,1) 29%, rgba(255,248,205,1) 50%, rgba(250,255,122,1) 68%, rgb(233, 218, 55) 84%);
     margin-left: .5rem;
     position: absolute;
     right: 1.5%;
     top: 12%;
 }   
+.data-winner-video-false{
+    width: 30%;
+    height: 68%;
+    border-radius: 10px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(90deg, rgb(206, 193, 58) 8%, rgba(255,228,74,1) 29%, rgba(255,248,205,1) 50%, rgba(250,255,122,1) 68%, rgb(233, 218, 55) 84%);
+    margin-left: .5rem;
+    position: absolute;
+    left: 30%;
+    top: 20%;
+}
+.data-winner-video-false .titles-winner{
+    margin-left: .5rem;
+    margin-right: 1rem;
+}
+.data-winner-video-false .titles-winner p,
+.data-winner-video-false .values-winner p{
+    margin-bottom: 1rem;
+    font-size: 16px;
+    display: block;
+}
 .titles-winner{
     width: 30%;
     display: inline-block;
@@ -178,7 +204,10 @@
 }
 @media (max-width: 780px) {
     .number-winner{
-        transform: translateY(-20px);
+        transform: translateY(-50px);
+    }
+    .number-winner-video-false{
+        transform: translateY(10px);
     }
     .number-winner h3,
     .number-winner h5{
@@ -196,14 +225,33 @@
         align-items: center;
         flex-direction: column;
     }
+    .card-last-winner-video-false{
+        height: 600px;
+    }
+    .number-winner-video-false{
+        transform: translateY(-20px);
+    }
+    
+    .content-img-lastWinner-video-false{
+        bottom: 0;
+    }
     .number-winner,
     .data-winner,
     .content-videoLastWinner,
     .content-img-lastWinner{
         width: 90%;
     }
+    .data-winner-video-false{
+        width: 86%;
+        height: 150px;
+        left: 0;
+        top: 0;
+    }
     .number-winner{
         margin-top: 1rem;
+    }
+    .number-winner{
+        transform: translateY(-20px);
     }
     .number-winner div{
         width: 150px;
@@ -247,6 +295,12 @@
 @media (max-width: 480px){
     .card-last-winner{
         width: 95%;
+    }
+    .data-winner-video-false{
+        top: 0;
+    }
+    .card-last-winner-video-false{
+        height: 550px;
     }
     .number-winner div{
         width: 100px;

@@ -11,6 +11,7 @@ import './styles/Awards.css'
 import './styles/video-player.css'
 import './styles/videogallery.css'
 import './styles/Footer.css'
+import './styles/Seeparticipants.css'
 import Navbar from './components/Navbar.jsx'
 import Banner from './components/Banner.jsx'
 import { WinnerWhitme } from './components/WinnerWhitme.jsx'
@@ -25,7 +26,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import FormBuy from './components/FormBuy.jsx'
 import Awards from './components/Awards.jsx'
 import VideoPlayer from './components/VideoPlayer.jsx'
-import VideoGallery from './components/VideoGallery.jsx'
+import ExportVideoGallery from './components/VideoGallery.jsx'
+import Seeparticipants from './components/Seeparticipants.jsx'
 
 /* import videoPrueba from './assets/videos/video-10-9-2024.mp4'; */
 import { useEffect } from 'react'
@@ -50,15 +52,17 @@ function App() {
     <BrowserRouter>
       <Navbar />
       <Routes>
-        <Route path='/' element={[
+        <Route path='/Inicio' element={[
              <Banner key={1}/>,
              <h1 key={2} className='title-winner-withme'>Ganar Es Facil Con Nosotros</h1>,
              <VideoPlayer key={3} url={videoPrueba}/>,/*Si las direcciones se encuentran localmente no es necesario colocarle aqui la url ni el audio */
-             <WinnerWhitme key={4} />,
-             <LastWinner key={5} />,
+             <Seeparticipants key={4}/>,
+             <WinnerWhitme key={5} />,
+             <LastWinner key={6} />,
              <Faqs key={7} />,
              <Contact key={8} />,
              <Footer key = {9}/>,
+          
         ]}/>
         
         {/*Cambiar la fecha(dateRifa) despues la rifa*/}
@@ -66,7 +70,7 @@ function App() {
            element = {[
             <div key={1} className='cont-app-reloj'><Reloj type='rifa' /></div>,
             <h2 className='titleSelector'  key={2}>Elige y Compra Ahora mismo tu numero y Participa en Nuestra Gran Rifa</h2>,
-            <SelectorRifa key={3} />
+            <SelectorRifa key={3}/>
            ]
            }
         />
@@ -85,10 +89,10 @@ function App() {
             element = {<FormBuy/>}
         />
 
-        <Route path='/Premius'
+        <Route path='/Awards'
             element = {<Awards/>}
         />
-        <Route path='/Ganadores' element= {<VideoGallery/>}/>
+        <Route path='/Ganadores' element= {<ExportVideoGallery/>}/>
       </Routes>
     </BrowserRouter>
   )
