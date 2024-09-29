@@ -3,11 +3,10 @@ import iconMenu from '../assets/images/icon-menu.png'
 import closeMenu from '../assets/images/close-menu.png'
 import ruedaLogo from '../assets/images/mago.png'
 
-import { Link } from 'react-router-dom'
-import { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom'
+import { useEffect, useState } from 'react';
 
 function Navbar() {
-
   const verifyViewport = (x) => {
     if (x.matches) {
       return true
@@ -20,14 +19,45 @@ function Navbar() {
   const mmObj = window.matchMedia("(max-width: 768px)")
   const [showUl, setShowUl] = useState(false)
   const [isMovil, setIsMovil] = useState(verifyViewport(mmObj))
+  const location = useLocation();
 
 
-  const closeMovilNav = () => {
+  useEffect(() => {
+    let position = [...document.querySelectorAll(".pathRoute")]
+    let urlPage = location.pathname;
     if (isMovil) {
-      setShowUl(!showUl)
+      position.map((el) => {
+        el.classList.remove("pathRoute-focus");
+      })
+    } else {
+      position.map((el) => {
+        if (urlPage.includes(el.dataset.path)) {
+          el.classList.add("pathRoute-focus");
+        }
+      })
     }
+  }, [isMovil])
 
+  const closeMovilNav = (e) => {
+
+    if (isMovil) {
+      let position = [...document.querySelectorAll(".pathRoute")]
+      position.map((el) => {
+        el.classList.remove("pathRoute-focus");
+      })
+      setShowUl(!showUl)
+    } else {
+      let elementNavar = [...document.querySelectorAll(".pathRoute-focus")];
+      if (e.target.matches(".pathRoute")) {
+        elementNavar.map((el) => {
+          el.classList.remove("pathRoute-focus");
+        })
+        e.target.classList.add("pathRoute-focus");
+      }
+      elementNavar = e.target;
+    }
   }
+
 
   // Add the match function as a listener for state changes
   mmObj.addEventListener("change", function () {
@@ -39,9 +69,9 @@ function Navbar() {
 
     <header className="header">
       <div className="logo-header">
-        <Link to="/"><img src={ruedaLogo} alt="" /></Link>
+        <Link to="/Inicio"><img src={ruedaLogo} alt="" /></Link>
       </div>
-      <h1 className="title-desktop">El comando de los Premios</h1>
+      <h1 className="title-desktop">El comando de los PREMIOS</h1>
       <div className="nav-menu">
         <input type="checkbox" id="check" onClick={closeMovilNav} />
         <label htmlFor="check" className="checkbtn">
@@ -54,13 +84,13 @@ function Navbar() {
               <i className="menu-icon" id="btn-menu-action"><img id="img-menu-action" src={showUl ? closeMenu : iconMenu} alt="" /></i>
             </label>
           </div>
-          <h1 className="title-movil">El comando de los Premios</h1>
-          <li onClick={closeMovilNav}><Link className='pathRoute' to="/">Inicio</Link ></li>
-          <li onClick={closeMovilNav}><Link className='pathRoute' to="/Rifa">Rifas</Link></li>
-          <li onClick={closeMovilNav}><Link className='pathRoute' to="/Sorteo/none">Sorteos</Link></li>
-          <li onClick={closeMovilNav}><Link className='pathRoute' to="/Premius">Premios</Link></li>
-          <li onClick={closeMovilNav}><Link className='pathRoute' to="/Ganadores">Ganadores</Link></li>
-          <li onClick={closeMovilNav}><Link className='pathRoute' to="/">Contacto</Link></li>
+          <h1 className="title-movil">El comando de los PREMIOS</h1>
+          <li onClick={closeMovilNav}><Link className='pathRoute' data-path="/Inicio" to="/Inicio">Inicio</Link ></li>
+          <li onClick={closeMovilNav}><Link className='pathRoute' data-path="/Rifa" to="/Rifa">Rifas</Link></li>
+          <li onClick={closeMovilNav}><Link className='pathRoute' data-path="/Sorteo" to="/Sorteo/none">Sorteos</Link></li>
+          <li onClick={closeMovilNav}><Link className='pathRoute' data-path="/Awards" to="/Awards">Premios</Link></li>
+          <li onClick={closeMovilNav}><Link className='pathRoute' data-path="/Ganadores" to="/Ganadores">Ganadores</Link></li>
+          <li onClick={closeMovilNav}><Link className='pathRoute' data-path="/Contactos" to="/Contactos">Contacto</Link></li>
           <div className='img-logo-movil'>  </div>
         </ul>
       </div>

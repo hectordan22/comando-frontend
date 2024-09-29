@@ -1,3 +1,20 @@
 .cont-app-reloj{
-    margin-top: 12em;
+    margin:8rem auto 1rem auto;
+    width: 40%;
+}
+
+@media (max-width: 980px) {
+    .cont-app-reloj{
+        width:60%;
+    }
+}
+@media (max-width: 700px) {
+    .cont-app-reloj{
+        width: 80%;
+    }
+}
+@media (max-width: 480px) {
+    .cont-app-reloj{
+        width: 90%;
+    }
 }
