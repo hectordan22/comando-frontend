@@ -27,11 +27,25 @@ import Awards from './components/Awards.jsx'
 import VideoPlayer from './components/VideoPlayer.jsx'
 import VideoGallery from './components/VideoGallery.jsx'
 
-import videoPrueba from './assets/videos/video-10-9-2024.mp4';
+/* import videoPrueba from './assets/videos/video-10-9-2024.mp4'; */
+import { useEffect } from 'react'
+import { useInitialStore } from './store/useGlobalData.js'
 
-
+let videoPrueba = ''
+let fechaRifa = ''
+let horaRifa = ''
 
 function App() {
+
+  const { dataInicial, isLoading, error,fetchDataInicial } = useInitialStore();
+  useEffect(() => {
+    fetchDataInicial();
+  }, []);
+
+  if (dataInicial) {
+    videoPrueba = dataInicial.videoInicialUrl
+  }
+
   return (
     <BrowserRouter>
       <Navbar />
@@ -50,7 +64,7 @@ function App() {
         {/*Cambiar la fecha(dateRifa) despues la rifa*/}
         <Route path='/Rifa'
            element = {[
-            <div key={1} className='cont-app-reloj'><Reloj type='rifa' dateRifa='09/29/2024' horaRifa='6:00' /></div>,
+            <div key={1} className='cont-app-reloj'><Reloj type='rifa' /></div>,
             <h2 className='titleSelector'  key={2}>Elige y Compra Ahora mismo tu numero y Participa en Nuestra Gran Rifa</h2>,
             <SelectorRifa key={3} />
            ]

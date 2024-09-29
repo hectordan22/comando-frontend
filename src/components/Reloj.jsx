@@ -1,9 +1,12 @@
 
 import { useEffect, useState } from 'react';
+import { useInitialStore } from '../store/useGlobalData';
 
 
-function Reloj({ type, dateRifa, horaRifa }) {
-  
+function Reloj({ type }) {
+    const {dataInicial} = useInitialStore((state) => state)
+    
+    
     // estado para rifas
     const [time, setTime] = useState({
         remainSeconds: 0,
@@ -39,6 +42,7 @@ function Reloj({ type, dateRifa, horaRifa }) {
     };
 
     const countdown = (deadline) => {
+        console.log(deadline)
         const timerUpdate = setInterval(() => {
             getRemainingTime(deadline);
             if (time.remainTime <= 1) {
@@ -80,10 +84,13 @@ function Reloj({ type, dateRifa, horaRifa }) {
             countdownSorteo()
     
         } else {
-            /*Cambiar la fecha para la rifa */
-            countdown(`${dateRifa}, ${horaRifa}:00 GMT-4`);
+             if (dataInicial) {
+                /*Cambiar la fecha para la rifa */
+                countdown(`${dataInicial.fechaRifa}, ${dataInicial.horaRifa}:00 GMT-4`);
+             }
+                
         }
-    },[type])
+    },[time,timeSorteo])
    
      
     if (type === 'sorteo') {
@@ -98,18 +105,18 @@ function Reloj({ type, dateRifa, horaRifa }) {
             </>
         )
     }else{
-        return (
-          <>
-             <h2 className='timeTitle'>Tiempo faltante para la Proxima Rifa</h2>
-                <div className="countdown">
-                    <span id= "dayElement">{time.remainDays} :</span>
-                    <span id="hourElement">{time.remainHours} :</span>
-                    <span id="minElement">{time.remainMinutes} :</span>
-                    <span id="secElement">{time.remainSeconds}</span>
-                </div>
-            </>
-    
-        )
+            return (
+                <>
+                   <h2 className='timeTitle'>Tiempo faltante para la Proxima Rifa</h2>
+                      <div className="countdown">
+                          <span id= "dayElement">{time.remainDays} :</span>
+                          <span id="hourElement">{time.remainHours} :</span>
+                          <span id="minElement">{time.remainMinutes} :</span>
+                          <span id="secElement">{time.remainSeconds}</span>
+                      </div>
+                  </>
+          
+              )
     }
     
 }
