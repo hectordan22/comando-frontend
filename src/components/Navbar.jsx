@@ -21,7 +21,6 @@ function Navbar() {
   const [isMovil, setIsMovil] = useState(verifyViewport(mmObj))
   const location = useLocation();
 
-
   useEffect(() => {
     let position = [...document.querySelectorAll(".pathRoute")]
     let urlPage = location.pathname;
@@ -90,7 +89,7 @@ function Navbar() {
           <li onClick={closeMovilNav}><Link className='pathRoute' data-path="/Sorteo" to="/Sorteo/none">Sorteos</Link></li>
           <li onClick={closeMovilNav}><Link className='pathRoute' data-path="/Awards" to="/Awards">Premios</Link></li>
           <li onClick={closeMovilNav}><Link className='pathRoute' data-path="/Ganadores" to="/Ganadores">Ganadores</Link></li>
-          <li onClick={closeMovilNav}><Link className='pathRoute' data-path="/Contactos" to="/Contactos">Contacto</Link></li>
+          <li onClick={closeMovilNav}><Link className='pathRoute' data-path="/Contactos" to="/Contactos">Contacto</Link></li> 
           <div className='img-logo-movil'>  </div>
         </ul>
       </div>

@@ -6,21 +6,9 @@ import ReatPlayer from 'react-player';
 const VideoPlayer = ({url}) => {
     const [currentVideo, setCurrentVideo] = useState(null);
     const [isVideoPlayig, setIsVideoPlaying] = useState(false);
-    // const audioRef = useRef(null);
-
-    // useEffect(()=>{
-    //     if(audioRef.current){
-    //         audioRef.current.pause()
-    //         audioRef.current.load()
-    //     }
-    // },[url, audioUrl]);
     
     const handleClick = (video) => {
         setCurrentVideo(video);
-        /*Trabajar con el video */
-        // if(audioRef.current){
-        //     audioRef.current.play();
-        // };
         if(currentVideo){
             setIsVideoPlaying(true)
         }
@@ -31,43 +19,14 @@ const VideoPlayer = ({url}) => {
             <div className="content-video-player">          
                 <div className="video-player" onClick={handleClick}>
                     <ReatPlayer url = {url} playing={isVideoPlayig} controls width= '100%' height='100%'/>
-                    {/* <audio ref={audioRef} src={audioUrl}/> */}
                 </div>
                 <div className="description-video-player">
                     <h1>Mira como puedes tener mas oportunidad de ganar</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi quaerat, beatae ab, porro iste quis sed odio facilis quidem tempore quibusdam dicta. Magni consectetur ut dolore. Facere veritatis quia sint.</p>
+                    <p>¿Quieres obtener numeros gratis.??<br/>En esta sección te mostramos como hacerlo.!!<br/>Así que toma nota, sigue los pasos y preparate para unirte a nuestra lista de ganadores. <span>😊😊😊</span></p>
                 </div>
             </div>
         </section>
     )
 }
 
-/*Usando la API youtube:
-impot YouTube form 'react-youtube';
-
-const Reel = ({videoId}) =>{
-    const playerRef = useRef(null);
-
-    const handleClik = ()=>{
-        if(playerRef.current){
-            playerRef.current.internalPlayer.playVideo();
-        }
-    }
-
-    return (
-        <div className="reel" onClick={handleClick}>
-            <YouTube
-                videoId = {videoId}
-                opts = {{
-                    playerVars:{
-                    autoplay :0,
-                    controls:0,
-                    mute: 1
-                    }
-                }}
-            />
-        </div>
-    )
-}
-*/
 export default  VideoPlayer;

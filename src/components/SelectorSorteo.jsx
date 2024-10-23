@@ -5,6 +5,8 @@ import Footer from './Footer.jsx'
 import useFetchBolets from '../scripts/useFetch';
 import logo from '../assets/images/mago.png';
 import { useState, useEffect } from 'react';
+import OfflineNotice from './Offline.jsx'
+import Popup from './InfoPopup.jsx';
 
 
 
@@ -69,9 +71,9 @@ function SelectorSorteo() {
         // convert object to string using JSON.stringify()
         const ticketsJson = JSON.stringify(valuesSorteo)
         // convert string to base64
-
         const tickets = btoa(ticketsJson)
         window.location.href = `http://localhost:5173/formBuy/sorteo/${tickets}/${afiliado}`
+        
     }
 
     const amountCalculate = (action) => {
@@ -112,14 +114,15 @@ function SelectorSorteo() {
 
     if (error || data.error) {
         return (
-            <div className='bg-popup-error' id='bg-popup-error'>
-                <div className='body-popup-error'>
-                    <span className='span-icon-error'>&#128534;</span>
-                    <p className='title-error-popup'>Algo salio mal</p>
-                    <p className='content-error-popup'>El servicio no pudo obtner los boletos disponibles.Intentalo de nuevo </p>
-                    <button type='button' className='btn-error-popup'>Intentar de nuevo</button>
-                </div>
-            </div>
+            // <div className='bg-popup-error' id='bg-popup-error'>
+            //     <div className='body-popup-error'>
+            //         <span className='span-icon-error'>&#128534;</span>
+            //         <p className='title-error-popup'>Algo salio mal</p>
+            //         <p className='content-error-popup'>El servicio no pudo obtner los boletos disponibles.Intentalo de nuevo </p>
+            //         <button type='button' className='btn-error-popup'>Intentar de nuevo</button>
+            //     </div>
+            // </div>
+            <Popup icono="fail" show={true} titulo="La conexión con el serivor falló. Por favor, revisa tu conexión a internet e intentalo mas tarde" description="Hubo un problema al obtener los datos. Estamos trabajando para resolverlo lo antes posible. Por favor, recarga la página o intenta más tarde" boton="ACEPTAR"/>
         )
     }
 
@@ -260,6 +263,7 @@ function SelectorSorteo() {
                 </div>
             </div>
             <Footer />
+            <OfflineNotice/>
         </>
     )
 }

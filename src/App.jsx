@@ -12,12 +12,13 @@ import './styles/video-player.css'
 import './styles/videogallery.css'
 import './styles/Footer.css'
 import './styles/Seeparticipants.css'
+import './styles/Offline.css'
+import './styles/InfoPopup.css'
 import Navbar from './components/Navbar.jsx'
 import Banner from './components/Banner.jsx'
 import { WinnerWhitme } from './components/WinnerWhitme.jsx'
 import LastWinner from './components/LastWinner.jsx'
 import { Faqs } from './components/Faqs.jsx'
-import Footer from './components/Footer.jsx'
 import Contact from './components/Contact.jsx'
 import Reloj from './components/Reloj.jsx'
 import SelectorRifa from './components/SelectorRifa.jsx'
@@ -28,10 +29,11 @@ import Awards from './components/Awards.jsx'
 import VideoPlayer from './components/VideoPlayer.jsx'
 import ExportVideoGallery from './components/VideoGallery.jsx'
 import Seeparticipants from './components/Seeparticipants.jsx'
+import OfflineNotice from './components/Offline.jsx'
+import Popup from './components/InfoPopup.jsx'
+
 
 import videoPrueba from './assets/videos/video-10-9-2024.mp4';
-
-
 
 function App() {
   return (
@@ -47,8 +49,7 @@ function App() {
              <LastWinner key={6} />,
              <Faqs key={7} />,
              <Contact key={8} />,
-             <Footer key = {9}/>,
-          
+             <OfflineNotice key={9}/>,
         ]}/>
         
         {/*Cambiar la fecha(dateRifa) despues la rifa*/}
@@ -79,6 +80,7 @@ function App() {
             element = {<Awards/>}
         />
         <Route path='/Ganadores' element= {<ExportVideoGallery/>}/>
+        <Route path='/Contactos' element= { <Contact/>}/>
       </Routes>
     </BrowserRouter>
   )

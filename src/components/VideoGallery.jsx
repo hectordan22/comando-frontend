@@ -3,6 +3,7 @@ import ReactPlayer from "react-player";
 import Footer from "./Footer";
 import like from '../assets/images/like.png';
 import vistas from '../assets/images/vistas.png';
+import OfflineNotice from './Offline.jsx'
 /*Imagenes Para Miniaturas:*/
 import prueba from '../assets/images/carro.jpg';
 import prueba2 from '../assets/images/sorteo.jpg';
@@ -198,6 +199,7 @@ function VideoGallery([...seccionesVideos]) {
             <div id="content-footer" style={{ transform: isVideoPlayig ? 'translateY(420px)' : 'translateY(0)' }}>
                 <Footer />
             </div>
+            <OfflineNotice/>
         </div>
     );
 }

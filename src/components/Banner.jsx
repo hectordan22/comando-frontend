@@ -5,6 +5,7 @@ import dinero from '../assets/images/banner.jpeg'
 import { useState, useEffect } from 'react';
 
 const images = [inicioBanner, prueba2,prueba3,dinero]
+
 const Carrusel = ({items}) => {
   const [activarIndice, setActivarIndice] = useState(0);
   useEffect(()=>{

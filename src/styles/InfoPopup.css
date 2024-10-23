@@ -1,0 +1,127 @@
+.content-father-popup{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background:rgba(0,0,0,.75);
+    z-index: 1200;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.content-popup{
+    position: relative;
+    width: 60%;
+    height: 80%;
+    margin: 0 auto;
+    background: linear-gradient(90deg, rgb(26, 36, 40) 0%, rgb(15, 35, 62) 27%, rgb(40, 48, 65) 48%, rgb(14, 26, 39) 90%);
+}
+.icono-popup{
+    width: 60%;
+    height: 70%;
+    margin: 0 auto;  
+    position: relative;
+    background: linear-gradient(90deg, rgb(26, 36, 40) 0%, rgb(15, 35, 62) 27%, rgb(40, 48, 65) 48%, rgb(14, 26, 39) 90%);
+}
+.icono-popup img{
+    width: 100%;
+    height: 100%;
+    position: absolute; 
+}
+.title-popup{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1100;
+}
+.title-popup h1{
+    width: 90%;
+    margin: .5rem auto;
+    text-align: center;
+    color: #e89a01;
+    font-size: 30px;
+}
+.description-popup{
+    width: 100%;
+    height: 25%;
+    box-sizing: border-box;
+    padding: 1rem;
+}
+.description-popup p{
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    color: #fff;
+}
+.enlace-popup{
+    z-index: 1200;
+    margin-bottom: .5rem;
+}
+.btn-popup{
+    width: 180px;
+    height: 40px;
+    margin: 0 auto;
+    cursor: pointer;
+    color: #fff;
+    background-color: #e89a01;
+    border: none;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+    z-index: 1200;
+}
+@media (max-width:1200px){
+    .content-popup{
+        width: 67.5%;
+    }
+    .icono-popup{
+        width: 65%;
+    }
+    .title-popup h1{
+        font-size: 27px;
+    }
+}
+@media (max-width:980px){
+    .content-popup{
+        width: 75%;
+    }
+    .icono-popup{
+        width: 75%;
+    }
+    .title-popup h1{
+        font-size: 24px;
+    }
+}
+@media (max-width:720px){
+    .content-popup{
+        width: 85%;
+    }
+    .icono-popup{
+        width: 85%;
+    }
+    .title-popup h1{
+        font-size: 22px;
+    }
+}
+@media (max-width:480px) {
+    .content-popup{
+        width: 95%;
+    }
+    .icono-popup{
+        width: 95%;
+    }
+    .title-popup h1{
+        font-size: 18px;
+    }
+    .description-popup p{
+        font-size: 14px;
+    }
+}
+
+
+
+
+
+
