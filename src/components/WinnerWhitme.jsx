@@ -42,7 +42,7 @@ export class WinnerWhitme extends React.Component {
                     ),
                     path: '/Rifa',
                     horaRifa:'6:00',
-                    fechaRifa:'10/29/2024'
+                    fechaRifa:'02/20/2025'
                     /*Cambiar la fecha(fechaRifa) despues la rifa*/
                 }
 

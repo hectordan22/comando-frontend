@@ -31,31 +31,46 @@ import ExportVideoGallery from './components/VideoGallery.jsx'
 import Seeparticipants from './components/Seeparticipants.jsx'
 import OfflineNotice from './components/Offline.jsx'
 import Popup from './components/InfoPopup.jsx'
+import React, { useState } from "react";
+
 
 
 import videoPrueba from './assets/videos/video-10-9-2024.mp4';
+import VideoEnVivo from './components/VideoEnVivo.jsx'
 
 function App() {
+  const [isVideoVisible, setIsVideoVisible]= useState(false)
+  const [visiblePopup, setVisiblePopup]= useState(false)
+
+  const modifystate = ()=>{
+    setIsVideoVisible(true);
+  }
+
+  const showPopup = ()=>{
+    setVisiblePopup(true)
+  }
   return (
     <BrowserRouter>
-      <Navbar />
+       <Popup key={11} icono="warning" show={visiblePopup} titulo="El Sorteo de hoy esta en Curso" description="Por favor espera a que el sorteo termine para poder comprar tu ticket para el proximo sorteo" boton="ACEPTAR"/>
+      <Navbar isVideoVisible={isVideoVisible} showPopup={showPopup}/>
       <Routes>
         <Route path='/Inicio' element={[
              <Banner key={1}/>,
              <h1 key={2} className='title-winner-withme'>Ganar Es Facil Con Nosotros</h1>,
              <VideoPlayer key={3} url={videoPrueba}/>,/*Si las direcciones se encuentran localmente no es necesario colocarle aqui la url ni el audio */
              <Seeparticipants key={4}/>,
-             <WinnerWhitme key={5} />,
-             <LastWinner key={6} />,
-             <Faqs key={7} />,
-             <Contact key={8} />,
-             <OfflineNotice key={9}/>,
+             <VideoEnVivo key={5} videoUrl={videoPrueba} setVisible = {modifystate}/>,
+             <WinnerWhitme key={6} />,
+             <LastWinner key={7} />,
+             <Faqs key={8} />,
+             <Contact key={9} />,
+             <OfflineNotice key={10}/>,
         ]}/>
         
         {/*Cambiar la fecha(dateRifa) despues la rifa*/}
         <Route path='/Rifa'
            element = {[
-            <div key={1} className='cont-app-reloj'><Reloj type='rifa' dateRifa='09/29/2024' horaRifa='6:00' /></div>,
+            <div key={1} className='cont-app-reloj'><Reloj type='rifa' dateRifa='02/20/2025' horaRifa='6:00' /></div>,
             <h2 className='titleSelector'  key={2}>Elige y Compra Ahora mismo tu numero y Participa en Nuestra Gran Rifa</h2>,
             <SelectorRifa key={3}/>
            ]

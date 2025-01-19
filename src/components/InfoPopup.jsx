@@ -1,13 +1,15 @@
 import React, { useEffect } from "react";
 import fallaServidor from '../assets/images/img-falla-al-servidor.png'
 import fallaServidor2 from '../assets/images/img-falla-al-servidor2.png'
-import informarEvento from '../assets/images/img-info.png'
+import warningEvento from '../assets/images/img-warning.png'
 import successEvento from '../assets/images/img-success-popup.png'
+import informarEvento from '../assets/images/infoImg.png'
 
 const typePopup = {
     success: successEvento,
     fail: [fallaServidor, fallaServidor2],
     info: informarEvento,
+    warning: warningEvento
 };
 const animateImgPopup = ()=>{
     useEffect(()=>{
@@ -34,7 +36,7 @@ function Popup({icono, titulo, description, boton, show, enlace = {actve:false, 
         window.location.reload();
     }
     return(
-        <div className="content-father-popup">
+        <div className="content-father-popup" style={show?{display: "flex",flexDirection:"column"} :{display: "none"}}>
             <div className="content-popup" style={show?{display: "flex",flexDirection:"column"} :{display: "none"}}>
                 <div className="icono-popup">
                     {(icono === "fail")
