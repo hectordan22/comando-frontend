@@ -6,7 +6,9 @@ import ruedaLogo from '../assets/images/mago.png'
 import { Link, useLocation } from 'react-router-dom'
 import { useEffect, useState } from 'react';
 
-function Navbar() {
+function Navbar({ isVideoVisible, showPopup}) {
+  const [isLinkActive, setIsLinkActive] = useState(false);
+
   const verifyViewport = (x) => {
     if (x.matches) {
       return true
@@ -21,8 +23,9 @@ function Navbar() {
   const [isMovil, setIsMovil] = useState(verifyViewport(mmObj))
   const location = useLocation();
 
-
   useEffect(() => {
+    setIsLinkActive(isVideoVisible)
+
     let position = [...document.querySelectorAll(".pathRoute")]
     let urlPage = location.pathname;
     if (isMovil) {
@@ -36,7 +39,13 @@ function Navbar() {
         }
       })
     }
-  }, [isMovil])
+  }, [isMovil, isVideoVisible]);
+
+  const handleClick = ()=>{
+    if(isLinkActive){
+      showPopup();
+    }
+  }
 
   const closeMovilNav = (e) => {
 
@@ -66,7 +75,6 @@ function Navbar() {
   });
 
   return (
-
     <header className="header">
       <div className="logo-header">
         <Link to="/Inicio"><img src={ruedaLogo} alt="" /></Link>
@@ -87,10 +95,10 @@ function Navbar() {
           <h1 className="title-movil">El comando de los PREMIOS</h1>
           <li onClick={closeMovilNav}><Link className='pathRoute' data-path="/Inicio" to="/Inicio">Inicio</Link ></li>
           <li onClick={closeMovilNav}><Link className='pathRoute' data-path="/Rifa" to="/Rifa">Rifas</Link></li>
-          <li onClick={closeMovilNav}><Link className='pathRoute' data-path="/Sorteo" to="/Sorteo/none">Sorteos</Link></li>
+          <li onClick={isVideoVisible?handleClick:closeMovilNav} ><Link className='pathRoute' data-path="/Sorteo" to={isVideoVisible?"/Inicio":"/Sorteo/none"}>Sorteos</Link></li>
           <li onClick={closeMovilNav}><Link className='pathRoute' data-path="/Awards" to="/Awards">Premios</Link></li>
           <li onClick={closeMovilNav}><Link className='pathRoute' data-path="/Ganadores" to="/Ganadores">Ganadores</Link></li>
-          <li onClick={closeMovilNav}><Link className='pathRoute' data-path="/Contactos" to="/Contactos">Contacto</Link></li>
+          <li onClick={closeMovilNav}><Link className='pathRoute' data-path="/Contactos" to="/Contactos">Contacto</Link></li> 
           <div className='img-logo-movil'>  </div>
         </ul>
       </div>

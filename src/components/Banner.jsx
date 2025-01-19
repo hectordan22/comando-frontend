@@ -20,8 +20,8 @@ const Carrusel = ({items}) => {
   
   return(
     <div className='banner-container'>
-      {items.map((imagenUrl,index)=>(
-        <img src={imagenUrl} alt={`Imagen-banner ${index}`} key={index} className={`img-carrusel ${index ===activarIndice ? 'active':''}`} />
+      {items.map((item,index)=>(
+        <img src={item.image} alt={`Imagen-banner ${index}`} key={index} className={`img-carrusel ${index ===activarIndice ? 'active':''}`} />
       ))}
     </div>
   )
@@ -30,6 +30,7 @@ const Carrusel = ({items}) => {
     const {dataInicial} = useInitialStore((state) => state)
     
    if (dataInicial) {
+      console.log(dataInicial)
      return (
        <div className='content-primeraImagen'>
          <div className='text-primeraImagen'>
@@ -38,7 +39,7 @@ const Carrusel = ({items}) => {
            </p>
          </div>
          
-         <Carrusel items={dataInicial.imagesBanner}/>
+         <Carrusel items={ dataInicial.imagesBanner && dataInicial.imagesBanner}/>
        </div>
  
      )

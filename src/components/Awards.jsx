@@ -4,7 +4,7 @@ import auto from '../assets/images/banner.jpeg'
 import moto from '../assets/images/banner.jpeg'
 import React, { useEffect } from "react";
 import { Link } from 'react-router-dom';
-
+import OfflineNotice from './Offline.jsx'
 
 const premiosPrincipales = [
     {
@@ -102,6 +102,7 @@ function Awards() {
             {MapArray(premiosSorpresa, 'Premios Sorpresa')}
             {MapArray(PrimerosEliminados, 'Primeros Eliminados')}
             <Footer />
+            <OfflineNotice/>
         </>
     )
 }
