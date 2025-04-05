@@ -54,7 +54,10 @@ function App() {
 
   const { dataInicial, isLoading, error,fetchDataInicial } = useInitialStore();
   useEffect(() => {
-    fetchDataInicial();
+    if (window.location.pathname === '/Inicio') {
+      fetchDataInicial();
+    }
+    
   }, []);
 
   if (dataInicial) {

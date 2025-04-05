@@ -35,9 +35,9 @@
     font-size: 22px;
     display: inline-block;
     position: absolute;
-    top: 1.5%;
-    left: 30%;
+    top: -0.5%;
     opacity: .8;
+    margin-bottom: 1em;
 }
 
 .father-video-description {
@@ -86,15 +86,16 @@
     left: 0;
     width: 100%;
     height: 360px;
-    background-color: black;
+    /* background-color: black; */
     cursor: pointer;
     margin-bottom: 2rem;
+    margin-top: 1em;
 }
 
 .video-players {
     width: 65%;
     height: 88%;
-    margin: 0 auto;
+    margin: 20px auto;
     position: absolute;
     top: 10%;
 }
@@ -162,7 +163,7 @@
     }
 
     .title-video-players {
-        font-size: 18px;
+        font-size: 16px;
     }
 }
 

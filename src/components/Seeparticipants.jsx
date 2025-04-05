@@ -1,13 +1,11 @@
-import React from "react";
-import Poster from "../assets/images/Poster1.png"
-import { useInitialStore } from '../store/useGlobalData';
 
-const baseDatos = 0
+import Poster from "../assets/images/Poster1.png"
+import useFetchBolets from "../scripts/useFetch";
 
 
 function DataDisplay(data){
     const dataLength = data;
-
+   
     if(dataLength < 100){
         return(
             <div className="content-see">
@@ -53,11 +51,22 @@ function DataDisplay(data){
 
 
 function Seeparticipants(){
-    const {dataInicial} = useInitialStore((state) => state)
+    const { error, data, loading } = useFetchBolets('http://localhost:3000/api/getNumberBuyersSorteo', {})
+    console.log({
+        data,
+        error
+        
+    })
     return(
         <div className="content-seeparticipants">
             <img src={Poster} alt="poster" />
-            { dataInicial && DataDisplay(dataInicial.participandoSorteo)}
+            { loading && 'Cargando...'}
+            { (!error && (data && !data.error)) && DataDisplay(Number(data.response.total))}
+            { ((!error && (data && data.error) ) || error) && <div className="content-see">
+                <h1> Ha ocurrido un error </h1>
+                <p>No se ha podido obtener la cantidad de compradores de Sorteos</p>
+               
+            </div>}
         </div>
     )
 }
