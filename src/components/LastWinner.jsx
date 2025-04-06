@@ -3,9 +3,8 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom'
 import video2 from '../assets/videos/video-9-9-2024.mp4';
 import video3 from '../assets/videos/video-10-9-2024.mp4';
-
 import congratulation from '../assets/images/img_congratulation_lastwinner.png';
-
+import '../styles/LastWinner.css'
 
 const dataSorteo = {
   id: "1",

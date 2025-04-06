@@ -1,6 +1,6 @@
 import React from "react";
 import Poster from "../assets/images/Poster1.png"
-
+import '../styles/Seeparticipants.css'
 const baseDatos = Array(50)
 
 

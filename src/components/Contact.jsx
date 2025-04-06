@@ -1,5 +1,6 @@
 import Footer from "./Footer"
 import OfflineNotice from './Offline.jsx'
+import '../styles/Contact.css'
 
 function Contact() {
     return (

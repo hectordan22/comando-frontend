@@ -4,7 +4,7 @@ import fallaServidor2 from '../assets/images/img-falla-al-servidor2.png'
 import warningEvento from '../assets/images/img-warning.png'
 import successEvento from '../assets/images/img-success-popup.png'
 import informarEvento from '../assets/images/infoImg.png'
-
+import '../styles/InfoPopup.css'
 const typePopup = {
     success: successEvento,
     fail: [fallaServidor, fallaServidor2],

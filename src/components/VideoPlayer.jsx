@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import ReatPlayer from 'react-player';
-
-
+import '../styles/video-player.css'
 /*En caso de un video*/
 const VideoPlayer = ({url}) => {
     const [currentVideo, setCurrentVideo] = useState(null);

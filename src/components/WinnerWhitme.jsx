@@ -6,7 +6,7 @@ import React from 'react'
 import tambor from '../assets/images/Tambor5.png'
 import { Link } from 'react-router-dom'
 import CartonRifa from './Carton'
-
+import '../styles/WinnerWhitme.css'
 
 export class WinnerWhitme extends React.Component {
 
@@ -41,8 +41,8 @@ export class WinnerWhitme extends React.Component {
                             Además de muchos premios sorpresa ¡Participa Ahora!</p>
                     ),
                     path: '/Rifa',
-                    horaRifa:'6:00',
-                    fechaRifa:'02/20/2025'
+                    horaRifa:'18:00',
+                    fechaRifa:'03/23/2025'
                     /*Cambiar la fecha(fechaRifa) despues la rifa*/
                 }
 
@@ -70,9 +70,9 @@ export class WinnerWhitme extends React.Component {
                                 </div>
 
                                 <div className='content-reloj'>
-                                 {
-                                  item.title === 'Sorteos' ?  <Reloj type='sorteo' key={index} /> :  <Reloj type='rifa' dateRifa={item.fechaRifa} horaRifa={item.horaRifa} key={index} />
-                                 } 
+                                    {
+                                    item.title === 'Sorteos' ?  <Reloj type='sorteo' key={index} /> :  <Reloj type='rifa' dateRifa={item.fechaRifa} horaRifa={item.horaRifa} key={index} />
+                                    } 
                                 </div>                              
                             </div>
                         )

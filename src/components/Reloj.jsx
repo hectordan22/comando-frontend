@@ -1,6 +1,5 @@
-
 import { useEffect, useState } from 'react';
-
+import '../styles/Reloj.css'
 
 function Reloj({ type, dateRifa, horaRifa }) {
   

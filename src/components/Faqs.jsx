@@ -1,5 +1,5 @@
 import React from 'react'
-
+import '../styles/Faqs.css'
 
 export class Faqs extends React.Component {
     constructor(props) {

@@ -5,7 +5,7 @@ import moto from '../assets/images/banner.jpeg'
 import React, { useEffect } from "react";
 import { Link } from 'react-router-dom';
 import OfflineNotice from './Offline.jsx'
-
+import '../styles/Awards.css'
 const premiosPrincipales = [
     {
         name: "Primer Premio",

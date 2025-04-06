@@ -7,7 +7,8 @@ import { useEffect, useState } from 'react';
 import logo from '../assets/images/mago.png';
 import OfflineNotice from './Offline.jsx';
 import Popup from './InfoPopup.jsx'
-
+import '../styles/Selector.css'
+import '../styles/Loader.css'
 let arrayRifa = []
 let totalRifas = 0
 

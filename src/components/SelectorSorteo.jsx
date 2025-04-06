@@ -7,8 +7,8 @@ import logo from '../assets/images/mago.png';
 import { useState, useEffect } from 'react';
 import OfflineNotice from './Offline.jsx'
 import Popup from './InfoPopup.jsx';
-
-
+import '../styles/Selector.css'
+import '../styles/Loader.css'
 
 let arraySorteo = [];
 let totalSorteos = 0
