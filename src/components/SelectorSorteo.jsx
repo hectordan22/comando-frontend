@@ -7,8 +7,8 @@ import logo from '../assets/images/mago.png';
 import { useState, useEffect } from 'react';
 import OfflineNotice from './Offline.jsx'
 import Popup from './InfoPopup.jsx';
-
-
+import '../styles/Selector.css'
+import '../styles/loader.css'
 
 let arraySorteo = [];
 let totalSorteos = 0
@@ -21,7 +21,6 @@ function SelectorSorteo() {
     const [showAmountsSorteo, setShowAmountsSorteo] = useState(false)
     const { error, data, loading } = useFetchBolets('http://localhost:3000/api/coindraw/getSorteoBuyers', {})
 
-    // console.log(data)
     if (data) {
         arraySorteo = []
         llenarData(data)
@@ -114,14 +113,6 @@ function SelectorSorteo() {
 
     if (error || data.error) {
         return (
-            // <div className='bg-popup-error' id='bg-popup-error'>
-            //     <div className='body-popup-error'>
-            //         <span className='span-icon-error'>&#128534;</span>
-            //         <p className='title-error-popup'>Algo salio mal</p>
-            //         <p className='content-error-popup'>El servicio no pudo obtner los boletos disponibles.Intentalo de nuevo </p>
-            //         <button type='button' className='btn-error-popup'>Intentar de nuevo</button>
-            //     </div>
-            // </div>
             <Popup icono="fail" show={true} titulo="La conexión con el serivor falló. Por favor, revisa tu conexión a internet e intentalo mas tarde" description="Hubo un problema al obtener los datos. Estamos trabajando para resolverlo lo antes posible. Por favor, recarga la página o intenta más tarde" boton="ACEPTAR"/>
         )
     }

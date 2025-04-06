@@ -1,4 +1,3 @@
-
 import iconMenu from '../assets/images/icon-menu.png'
 import closeMenu from '../assets/images/close-menu.png'
 import ruedaLogo from '../assets/images/mago.png'

@@ -1,7 +1,7 @@
-
 import { useEffect, useState } from 'react';
 import { useInitialStore } from '../store/useGlobalData';
 
+import '../styles/Reloj.css'
 
 function Reloj({ type }) {
     const {dataInicial} = useInitialStore((state) => state)

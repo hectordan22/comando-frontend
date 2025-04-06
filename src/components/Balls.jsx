@@ -37,7 +37,7 @@ const generarBalls = (count, containerWidth, containerHeight) => {
             radius: 12,
             number: Math.ceil(Math.random() * 100)
         });
-    };
+    }
     return balls;
 };
 
@@ -50,7 +50,7 @@ const Balls = () => {
                 const containerWidth = containerRef.current.clientWidth;
                 const containerHeight = containerRef.current.clientHeight;
                 setBalls(generarBalls(30, containerWidth, containerHeight));
-            };
+            }
         };   
         
         useLayoutEffect(()=>{

@@ -1,13 +1,8 @@
-/* import inicioBanner from '../assets/images/winner-inicio.jpg'
-import prueba2 from '../assets/images/sorteo.jpg'
-import prueba3 from '../assets/images/iconLogo.png'
-import dinero from '../assets/images/banner.jpeg' */
+
 import { useState, useEffect } from 'react';
 //Data global Inicial
 import { useInitialStore } from '../store/useGlobalData';
 
-
-/* const images = [inicioBanner, prueba2,prueba3,dinero] */
 
 const Carrusel = ({items}) => {
   const [activarIndice, setActivarIndice] = useState(0);

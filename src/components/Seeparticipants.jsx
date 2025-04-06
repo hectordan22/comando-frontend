@@ -1,6 +1,8 @@
 
-import Poster from "../assets/images/Poster1.png"
+
 import useFetchBolets from "../scripts/useFetch";
+import Poster from "../assets/images/Poster1.png"
+import '../styles/Seeparticipants.css'
 
 
 function DataDisplay(data){

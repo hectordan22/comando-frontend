@@ -1,12 +1,11 @@
 import ReatPlayer from 'react-player';
-import React, { useState, useRef, useEffect } from 'react';
+import  { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom'
-import video2 from '../assets/videos/video-9-9-2024.mp4';
-import video3 from '../assets/videos/video-10-9-2024.mp4';
 
-import congratulation from '../assets/images/Last-Winner-Congratulation.png';
 import { useInitialStore } from '../store/useGlobalData';
 
+import congratulation from '../assets/images/img_congratulation_lastwinner.png';
+import '../styles/LastWinner.css'
 
 function LastWinner() {
   const {dataInicial} = useInitialStore((state) => state)
@@ -18,14 +17,12 @@ function LastWinner() {
    useEffect(()=>{
     dataInicial && dataInicial.lastWinners.map(item => {
       if(item.videoUrl === ''){
-      /*   containerRef.current.style.display = "none"; */
         document.getElementById(`content-videoLastWinner${item.id}`).style.display = "none"
         document.getElementById(`data-winner${item.id}`).classList.add("data-winner-video-false");
         document.getElementById(`number-winner${item.id}`).classList.add("number-winner-video-false");
         document.getElementById(`card-last-winner${item.id}`).classList.add("card-last-winner-video-false");
         document.getElementById(`content-img-lastWinner${item.id}`).classList.add("content-img-lastWinner-video-false");
       }else{
-       /*  containerRef.current.style.display = "inline-block"; */
          document.getElementById(`content-videoLastWinner${item.id}`).style.display = "inline-block";
       }
      })

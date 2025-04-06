@@ -1,5 +1,3 @@
-// import carro from '../assets/images/carro.jpg'
-// import sorteo from '../assets/images/sorteo.jpg'
 import Reloj from './Reloj'
 import Balls from './Balls'
 import tambor from '../assets/images/Tambor5.png'
@@ -7,6 +5,7 @@ import { Link } from 'react-router-dom'
 import CartonRifa from './Carton'
 
 import { useInitialStore } from '../store/useGlobalData'
+import '../styles/WinnerWhitme.css'
 
 const data = [
     {
@@ -30,25 +29,12 @@ const data = [
         ),
         
         path: '/Rifa'
-        /*Cambiar la fecha(fechaRifa) despues la rifa*/
     }
 
 ]
 
 export function WinnerWhitme() {
     const {dataInicial} = useInitialStore((state) => state)
-   /*  let nuevaData = [
-        data[0]
-    ] 
-    if (dataInicial) {
-       nuevaData.push({
-        ...data[1],
-        horaRifa:dataInicial.horaRifa,
-        fechaRifa:dataInicial.fechaRifa
-
-       })
-
-    }  */  
     if (dataInicial) {
         return (
             <section className='father-winner'>

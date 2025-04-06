@@ -1,19 +1,5 @@
 
-import './App.css'
-import './styles/Selector.css'
-import './styles/Reloj.css'
-import './styles/WinnerWhitme.css'
-import './styles/loader.css'
-import './styles/LastWinner.css'
-import './styles/Faqs.css'
-import './styles/Contact.css'
-import './styles/Awards.css'
-import './styles/video-player.css'
-import './styles/videogallery.css'
-import './styles/Footer.css'
-import './styles/Seeparticipants.css'
-import './styles/Offline.css'
-import './styles/InfoPopup.css'
+import './App.css' 
 import Navbar from './components/Navbar.jsx'
 import Banner from './components/Banner.jsx'
 import { WinnerWhitme } from './components/WinnerWhitme.jsx'
@@ -31,23 +17,23 @@ import ExportVideoGallery from './components/VideoGallery.jsx'
 import Seeparticipants from './components/Seeparticipants.jsx'
 import OfflineNotice from './components/Offline.jsx'
 import Popup from './components/InfoPopup.jsx'
-import React, { useState } from "react";
-import { useEffect } from 'react'
+import  { useState, useEffect } from "react";
 import { useInitialStore } from './store/useGlobalData.js'
 
 let videoPrueba = ''
 
 /* import videoPrueba from './assets/videos/video-10-9-2024.mp4'; */
-import VideoEnVivo from './components/VideoEnVivo.jsx'
+/* import VideoEnVivo from './components/VideoEnVivo.jsx'
+import videoPrueba from './assets/videos/video-10-9-2024.mp4'; */
+
+import VideoTransmision from './components/VideoTransmision.jsx'
 
 function App() {
   const [isVideoVisible, setIsVideoVisible]= useState(false)
   const [visiblePopup, setVisiblePopup]= useState(false)
-
   const modifystate = ()=>{
     setIsVideoVisible(true);
   }
-
   const showPopup = ()=>{
     setVisiblePopup(true)
   }
@@ -73,7 +59,8 @@ function App() {
              <h1 key={2} className='title-winner-withme'>Ganar Es Facil Con Nosotros</h1>,
              <VideoPlayer key={3} url={videoPrueba}/>,/*Si las direcciones se encuentran localmente no es necesario colocarle aqui la url ni el audio */
              <Seeparticipants key={4}/>,
-             <VideoEnVivo key={5} videoUrl={videoPrueba} setVisible = {modifystate}/>,
+             <VideoTransmision key={5} videoUrl="https://www.youtube.com/watch?v=yYMEMTZp2QA&ab_channel=DonOmarNation" scheduledTime="18:44" videoDuration={3.49}/>, //isLive={true} para video en vivo(quitar videoDuration)
+            //  <VideoTransmision key={5} videoUrl="https://www.youtube.com/watch?v=7_srED6k0bE&ab_channel=RTVENoticias" scheduledTime="15:20" isLive={true}/>, //videoDuration={duracion del video ejemplo dura 5:14 entonces 5.14 }(quitar isLive)
              <WinnerWhitme key={6} />,
              <LastWinner key={7} />,
              <Faqs key={8} />,
@@ -84,9 +71,9 @@ function App() {
         {/*Cambiar la fecha(dateRifa) despues la rifa*/}
         <Route path='/Rifa'
            element = {[
-            <div key={1} className='cont-app-reloj'><Reloj type='rifa'/></div>,
+            <div key={1} className='cont-app-reloj'><Reloj type='rifa' /></div>,
             <h2 className='titleSelector'  key={2}>Elige y Compra Ahora mismo tu numero y Participa en Nuestra Gran Rifa</h2>,
-            <SelectorRifa key={3}/>
+            <SelectorRifa key={3} />
            ]
            }
         />

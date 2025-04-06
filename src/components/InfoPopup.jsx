@@ -1,37 +1,42 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import fallaServidor from '../assets/images/img-falla-al-servidor.png'
 import fallaServidor2 from '../assets/images/img-falla-al-servidor2.png'
 import warningEvento from '../assets/images/img-warning.png'
 import successEvento from '../assets/images/img-success-popup.png'
 import informarEvento from '../assets/images/infoImg.png'
-
+import '../styles/InfoPopup.css'
 const typePopup = {
     success: successEvento,
     fail: [fallaServidor, fallaServidor2],
     info: informarEvento,
     warning: warningEvento
 };
+
 const animateImgPopup = ()=>{
-    useEffect(()=>{
-        const imgAnimada = document.getElementById(`img-popup1`)
-        let animatePopup = setInterval(()=>{
-            imgAnimada.style.zIndex = "-999"
-        },2000)
-        let animatePopup2 = setInterval(()=>{
-            imgAnimada.style.zIndex = "999"
-        },4000)
-        setTimeout(()=>{
-            clearInterval(animatePopup)
-            clearInterval(animatePopup2)
-        },60000)
-    },[])
+    const imgAnimada = document.getElementById(`img-popup1`)
+    let animatePopup = setInterval(()=>{
+        imgAnimada.style.zIndex = "-999"
+    },2000)
+    let animatePopup2 = setInterval(()=>{
+        imgAnimada.style.zIndex = "999"
+    },4000)
+    setTimeout(()=>{
+        clearInterval(animatePopup)
+        clearInterval(animatePopup2)
+    },60000)
+   
 }
 
 
 function Popup({icono, titulo, description, boton, show, enlace = {actve:false, link:""}}){
-    if(icono === "fail"){
-        animateImgPopup() 
-    }
+
+    useEffect(()=>{
+        if (icono === "fail") {
+            animateImgPopup()  
+        }
+    },[icono])
+
+   
     const handleRetry = () => {
         window.location.reload();
     }

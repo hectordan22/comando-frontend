@@ -1,69 +1,11 @@
 import Footer from './Footer';
-import dinero from '../assets/images/banner.jpeg'
-import auto from '../assets/images/banner.jpeg'
-import moto from '../assets/images/banner.jpeg'
-import React, { useEffect, useState } from "react";
+
 import { Link } from 'react-router-dom';
 import OfflineNotice from './Offline.jsx'
 import fetchData from '../scripts/fetchData.js';
+import '../styles/Awards.css'
+import { useState, useEffect } from 'react';
 
-/* const premiosPrincipales = [
-    {
-        name: "Primer Premio",
-        img: dinero,
-        description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci recusandae eligendi vero sapiente blanditiis debitis temporibus, iste architecto quam ullam suscipit eius, numquam sunt id inventore deleniti incidunt fugiat odio!'
-    },
-
-    {
-        name: "Segundo Premio",
-        img: auto,
-        description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci recusandae eligendi vero sapiente blanditiis debitis temporibus, iste architecto quam ullam suscipit eius, numquam sunt id inventore deleniti incidunt fugiat odio!'
-    },
-
-    {
-        name: "Tercer Premio",
-        img: moto,
-        description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci recusandae eligendi vero sapiente blanditiis debitis temporibus, iste architecto quam ullam suscipit eius, numquam sunt id inventore deleniti incidunt fugiat odio!'
-    }
-];
-
-const premiosSorpresa = [
-    {
-        name: "Primer Eliminado",
-        img: moto,
-        description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci recusandae eligendi vero sapiente blanditiis debitis temporibus, iste architecto quam ullam suscipit eius, numquam sunt id inventore deleniti incidunt fugiat odio!'
-    },
-    {
-        name: "Segundo eliminado",
-        img: moto,
-        description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci recusandae eligendi vero sapiente blanditiis debitis temporibus, iste architecto quam ullam suscipit eius, numquam sunt id inventore deleniti incidunt fugiat odio!'
-    },
-
-    {
-        name: "Tercer Eliminado",
-        img: moto,
-        description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci recusandae eligendi vero sapiente blanditiis debitis temporibus, iste architecto quam ullam suscipit eius, numquam sunt id inventore deleniti incidunt fugiat odio!'
-    }
-];
-
-const PrimerosEliminados = [
-    {
-        name: "Primer Eliminado",
-        img: moto,
-        description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci recusandae eligendi vero sapiente blanditiis debitis temporibus, iste architecto quam ullam suscipit eius, numquam sunt id inventore deleniti incidunt fugiat odio!'
-    },
-    {
-        name: "Segundo eliminado",
-        img: moto,
-        description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci recusandae eligendi vero sapiente blanditiis debitis temporibus, iste architecto quam ullam suscipit eius, numquam sunt id inventore deleniti incidunt fugiat odio!'
-    },
-
-    {
-        name: "Tercer Eliminado",
-        img: moto,
-        description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci recusandae eligendi vero sapiente blanditiis debitis temporibus, iste architecto quam ullam suscipit eius, numquam sunt id inventore deleniti incidunt fugiat odio!'
-    }
-]; */
  const initials = { error:null, data: null, loader:true}
 function Awards() {
      const [infoInitial, setInfoInitial] = useState(initials)

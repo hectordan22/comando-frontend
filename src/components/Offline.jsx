@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import sinAccesoInternet from '../assets/images/sin-acceso-a-internet.png'
-
+import '../styles/Offline.css'
 const OfflineNotice = (text) => {
     const [isOffline, setIsOffLine] = useState(!navigator.onLine);
 

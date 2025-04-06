@@ -1,4 +1,6 @@
 import  { useEffect, useState, useLayoutEffect} from "react";
+
+import '../styles/videogallery.css'
 import ReactPlayer from "react-player";
 import Footer from "./Footer";
 import like from '../assets/images/like.png';

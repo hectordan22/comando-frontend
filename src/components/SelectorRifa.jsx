@@ -1,13 +1,13 @@
 import arrowCircle from '../assets/images/arrow-circle-next.png'
 import ticketDefinido from '../assets/images/ticke_definido_1.png'
-import { useParams } from "react-router-dom";
 import Footer from './Footer.jsx'
 import useFetchBolets from '../scripts/useFetch';
 import { useEffect, useState } from 'react';
 import logo from '../assets/images/mago.png';
 import OfflineNotice from './Offline.jsx';
 import Popup from './InfoPopup.jsx'
-
+import '../styles/Selector.css'
+import '../styles/loader.css'
 let arrayRifa = []
 let totalRifas = 0
 
@@ -17,7 +17,7 @@ function SelectorRifa() {
     const [showAmountsRifa, setShowAmountsRifa] = useState(false)
     const { error, data, loading } = useFetchBolets('http://localhost:3000/api/coindraw/getRifasBuyers')
 
-    // console.log(data)
+     console.log(data)
     if (data) {
         arrayRifa = []
         llenarData(data)
@@ -112,15 +112,8 @@ function SelectorRifa() {
     }
 
     if (error || data.error) {
+       
         return (
-            // <div className='bg-popup-error' id='bg-popup-error'>
-            //     <div className='body-popup-error'>
-            //         <span className='span-icon-error'>&#128534;</span>
-            //         <p className='title-error-popup'>Algo salio mal</p>
-            //         <p className='content-error-popup'>El servicio no pudo obtner los boletos disponibles.Intentalo de nuevo </p>
-            //         <button type='button' className='btn-error-popup'>Intentar de nuevo</button>
-            //     </div>
-            // </div>
             <Popup icono="fail" show={true} titulo="La conexión con el serivor falló. Por favor, revisa tu conexión a internet e intentalo mas tarde" description="Hubo un problema al obtener los datos. Estamos trabajando para resolverlo lo antes posible. Por favor, recarga la página o intenta más tarde" boton="ACEPTAR"/>
         )
     }
@@ -268,11 +261,13 @@ function SelectorRifa() {
             
         </>
     )
+   
 }
 
 
 function llenarData(data = {}) {
     const { response } = data
+    console.log(response)
     //establecer el parametro para actualizar la cantidad de numeros a renderizar
     let initial = 1
     let finaly = 100

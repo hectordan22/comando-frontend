@@ -1,5 +1,6 @@
 
 import { useInitialStore } from '../store/useGlobalData';
+import '../styles/Faqs.css'
 
 export function Faqs() {
     const {dataInicial} = useInitialStore((state) => state)
