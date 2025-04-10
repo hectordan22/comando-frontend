@@ -25,7 +25,7 @@ const Carrusel = ({items}) => {
     const {dataInicial} = useInitialStore((state) => state)
     
    if (dataInicial) {
-      console.log(dataInicial)
+      // console.log(dataInicial)
      return (
        <div className='content-primeraImagen'>
          <div className='text-primeraImagen'>

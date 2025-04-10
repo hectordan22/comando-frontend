@@ -42,7 +42,6 @@ function Reloj({ type }) {
     };
 
     const countdown = (deadline) => {
-        console.log(deadline)
         const timerUpdate = setInterval(() => {
             getRemainingTime(deadline);
             if (time.remainTime <= 1) {

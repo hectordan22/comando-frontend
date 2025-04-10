@@ -26,7 +26,7 @@ const fetchData = async (url, getBody = null, method ='POST',formdata = false) =
    responseData.loader = true
    try {
      const response =  getBody ? await fetch(url, requestOptions) : await fetch(url)
-     console.log(response)
+    //  console.log(response)
      const dataInfo = await response.json();
      responseData.loader = false
      responseData.error = null
@@ -36,7 +36,7 @@ const fetchData = async (url, getBody = null, method ='POST',formdata = false) =
      responseData.error = error
      responseData.data = null
    }
-   console.log(responseData)
+  //  console.log(responseData)
    return  responseData
 }
 

@@ -54,11 +54,6 @@ function DataDisplay(data){
 
 function Seeparticipants(){
     const { error, data, loading } = useFetchBolets('http://localhost:3000/api/getNumberBuyersSorteo', {})
-    console.log({
-        data,
-        error
-        
-    })
     return(
         <div className="content-seeparticipants">
             <img src={Poster} alt="poster" />

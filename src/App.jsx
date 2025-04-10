@@ -20,46 +20,45 @@ import Popup from './components/InfoPopup.jsx'
 import  { useState, useEffect } from "react";
 import { useInitialStore } from './store/useGlobalData.js'
 
-let videoPrueba = ''
-
-/* import videoPrueba from './assets/videos/video-10-9-2024.mp4'; */
-/* import VideoEnVivo from './components/VideoEnVivo.jsx'
-import videoPrueba from './assets/videos/video-10-9-2024.mp4'; */
+let videoPrueba = '';
 
 import VideoTransmision from './components/VideoTransmision.jsx'
 
 function App() {
-  const [isVideoVisible, setIsVideoVisible]= useState(false)
-  const [visiblePopup, setVisiblePopup]= useState(false)
-  const modifystate = ()=>{
-    setIsVideoVisible(true);
-  }
-  const showPopup = ()=>{
-    setVisiblePopup(true)
-  }
-
-  const { dataInicial, isLoading, error,fetchDataInicial } = useInitialStore();
+  const { dataInicial, isLoading, error, fetchDataInicial } = useInitialStore();
+ 
   useEffect(() => {
     if (window.location.pathname === '/Inicio') {
       fetchDataInicial();
-    }
-    
+    } 
   }, []);
 
   if (dataInicial) {
     videoPrueba = dataInicial.videoInicialUrl
   }
+  if (isLoading) {
+    return (
+        <div className='show-modal' id='show-modal'>
+            <div className='mago-container'></div>
+            <div className="cargando">
+                <div className="pelotas">45</div>
+                <div className="pelotas">62</div>
+                <div className="pelotas">158</div>
+                <span className="texto-cargando">Cargando...</span>
+            </div>
+        </div>
+    )
+  }
   return (
     <BrowserRouter>
-       <Popup key={11} icono="warning" show={visiblePopup} titulo="El Sorteo de hoy esta en Curso" description="Por favor espera a que el sorteo termine para poder comprar tu ticket para el proximo sorteo" boton="ACEPTAR"/>
-      <Navbar isVideoVisible={isVideoVisible} showPopup={showPopup}/>
+      <Navbar/>
       <Routes>
         <Route path='/Inicio' element={[
              <Banner key={1}/>,
              <h1 key={2} className='title-winner-withme'>Ganar Es Facil Con Nosotros</h1>,
              <VideoPlayer key={3} url={videoPrueba}/>,/*Si las direcciones se encuentran localmente no es necesario colocarle aqui la url ni el audio */
              <Seeparticipants key={4}/>,
-             <VideoTransmision key={5} videoUrl="https://www.youtube.com/watch?v=yYMEMTZp2QA&ab_channel=DonOmarNation" scheduledTime="18:44" videoDuration={3.49}/>, //isLive={true} para video en vivo(quitar videoDuration)
+             <VideoTransmision key={5} videoUrl="https://www.youtube.com/watch?v=yYMEMTZp2QA&ab_channel=DonOmarNation" scheduledTime="19:32" videoDuration={3.49}/>, //isLive={true} para video en vivo(quitar videoDuration)
             //  <VideoTransmision key={5} videoUrl="https://www.youtube.com/watch?v=7_srED6k0bE&ab_channel=RTVENoticias" scheduledTime="15:20" isLive={true}/>, //videoDuration={duracion del video ejemplo dura 5:14 entonces 5.14 }(quitar isLive)
              <WinnerWhitme key={6} />,
              <LastWinner key={7} />,
@@ -72,7 +71,7 @@ function App() {
         <Route path='/Rifa'
            element = {[
             <div key={1} className='cont-app-reloj'><Reloj type='rifa' /></div>,
-            <h2 className='titleSelector'  key={2}>Elige y Compra Ahora mismo tu numero y Participa en Nuestra Gran Rifa</h2>,
+            <h2 className='titleSelector' key={2}>Elige y Compra Ahora mismo tu numero y Participa en Nuestra Gran Rifa</h2>,
             <SelectorRifa key={3} />
            ]
            }

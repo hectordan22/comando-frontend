@@ -6,7 +6,7 @@
 .video-gallery {
     width: 100%;
     height: 100%;
-    margin-top: 4rem;
+    margin-top: 5rem;
 }
 
 .video-miniatura {
@@ -39,6 +39,15 @@
     opacity: .8;
     margin-bottom: 1em;
 }
+.video-player-winner{
+    color: #fff;
+    font-size: 22px;
+    display: inline-block;
+    position: absolute;
+    top: 2rem;
+    opacity: .8;
+    margin-bottom: 1em;
+}
 
 .father-video-description {
     width: 28%;
@@ -47,34 +56,47 @@
     flex-direction: column;
     margin: 1rem calc(100%/40);
     display: inline-block;
-    border-radius: 1rem;
-
+    border-top-right-radius: 1rem;
+    border-top-left-radius: 1rem;
 }
 
 .miniatura {
     width: 100%;
-    border-radius: 1rem;
+    border-top-right-radius: 1rem;
+    border-top-left-radius: 1rem;
     height: 35vh;
     box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
     cursor: pointer;
-
 }
 
 .description-video-gallery {
     display: inline-block;
     margin-bottom: 2rem;
+    width: 100%;
+    height: 100%;
+    background: rgba(147, 147, 148, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    box-sizing: border-box;
+    padding: .5rem 1rem;
 }
 
 .description-video-gallery p {
     font-size: 12px;
     color: #fff;
+    text-align: center;
 }
 
 .miniatura img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 1rem;
+    border-top-right-radius: 1rem;
+    border-top-left-radius: 1rem;
 }
 
 .father-video-player {
@@ -85,8 +107,7 @@
     top: 16vh;
     left: 0;
     width: 100%;
-    height: 360px;
-    /* background-color: black; */
+    height: 400px;
     cursor: pointer;
     margin-bottom: 2rem;
     margin-top: 1em;
@@ -97,7 +118,7 @@
     height: 88%;
     margin: 20px auto;
     position: absolute;
-    top: 10%;
+    top: 15%;
 }
 
 .video-players .controls {
@@ -162,7 +183,8 @@
         font-size: 2rem;
     }
 
-    .title-video-players {
+    .title-video-players,
+    .video-player-winner {
         font-size: 16px;
     }
 }
@@ -172,7 +194,8 @@
         width: 85%;
     }
 
-    .title-video-players {
+    .title-video-players,
+    .video-player-winner {
         font-size: 16px;
     }
 }
@@ -204,9 +227,13 @@
         font-size: 16px;
     }
 
-    .title-video-players {
-        left: 15%;
+    .title-video-players,
+    .video-player-winner {
         font-size: 14px;
+        text-align: center;
+        box-sizing: border-box;
+        padding-left: .5rem;
+        padding-right: .5rem;
     }
 }
 

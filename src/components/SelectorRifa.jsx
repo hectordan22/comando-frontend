@@ -17,7 +17,7 @@ function SelectorRifa() {
     const [showAmountsRifa, setShowAmountsRifa] = useState(false)
     const { error, data, loading } = useFetchBolets('http://localhost:3000/api/coindraw/getRifasBuyers')
 
-     console.log(data)
+    //  console.log(data)
     if (data) {
         arrayRifa = []
         llenarData(data)
@@ -30,7 +30,7 @@ function SelectorRifa() {
     const prevItem = () => {
         setcountRifa((countRifa) => {
             let varon = countRifa === 0 ? arrayRifa.length - 1 : countRifa - 1
-            console.log(varon)
+            // console.log(varon)
             let elem = document.getElementById(`${arrayRifa[varon].id}${'Rifa'}`)
             elem.animate([{ transform: "translateX(100%)" }, { transformorigin: "100%" }], { duration: 500 })
             return varon
@@ -267,7 +267,7 @@ function SelectorRifa() {
 
 function llenarData(data = {}) {
     const { response } = data
-    console.log(response)
+    // console.log(response)
     //establecer el parametro para actualizar la cantidad de numeros a renderizar
     let initial = 1
     let finaly = 100

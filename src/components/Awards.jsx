@@ -6,7 +6,7 @@ import fetchData from '../scripts/fetchData.js';
 import '../styles/Awards.css'
 import { useState, useEffect } from 'react';
 
- const initials = { error:null, data: null, loader:true}
+const initials = { error:null, data: null, loader:true}
 function Awards() {
      const [infoInitial, setInfoInitial] = useState(initials)
     const titles = [
@@ -27,13 +27,19 @@ function Awards() {
         return document.body.classList.remove('no-scroll');
     },[]);
 
-   
-
     if (infoInitial.loader) {
-        return <div>
-            Cargando...
-        </div>
+        return (
+            <div className='show-modal' id='show-modal'>
+                <div className='mago-container'></div>
+                <div className="cargando">
+                    <div className="pelotas">45</div>
+                    <div className="pelotas">62</div>
+                    <div className="pelotas">158</div>
+                    <span className="texto-cargando">Cargando...</span>
+                </div>
+            </div>)
     }
+    
     if (infoInitial.data) {
         return (
             <>

@@ -3,6 +3,8 @@ import ReactPlayer from 'react-player';
 import '../styles/VideoTransmision.css';
 import { GiSoundOff } from "react-icons/gi";
 
+import { VideoObserver, VIDEO_STATES } from './VideoObserver.jsx';
+
 const VideoTransmision = ({
   videoUrl,
   scheduledTime, // Formato "HH:MM" (ej. "20:51")
@@ -14,6 +16,11 @@ const VideoTransmision = ({
   const [isMuted, setIsMuted] = useState(true);/** */
   const playerRef = useRef(null);
   const apiCheckInterval = useRef(null);
+
+  // Función para notificar estados generales
+  const notifyState = (state) => {
+    VideoObserver.notify({ state })
+  };
 
   // Función para obtener hora exacta (API + fallback local)
   const getAccurateTime = async () => {
@@ -74,7 +81,7 @@ const VideoTransmision = ({
   const handleReady = async () => {
     if (playerRef.current) {
       const elapsed = Math.max(0, await getElapsedTime());
-      console.log(elapsed)
+      // console.log(elapsed)
       if (!isLive && elapsed > 0) {
         playerRef.current.seekTo(elapsed, 'seconds');
       }
@@ -84,8 +91,10 @@ const VideoTransmision = ({
     }
   };
 
-  //Mostrar mensaje al final del video
+  // Función que se ejecuta al finalizar el video
   const handleVideoEnd = () => {
+    // 1. Notificar a los observadores
+    VideoObserver.notify({ state: VIDEO_STATES.ENDED});
     setShowPlayer('ended');
     setShowEndMessage(true);
     
@@ -93,7 +102,7 @@ const VideoTransmision = ({
       setShowEndMessage(false)
       setShowPlayer('waiting')
     },60000)
-  };
+  }
   
   // Bloqueo de interacciones
   const blockInteraction = (e) => {
@@ -113,6 +122,7 @@ const VideoTransmision = ({
         </div>
       ) : (
         <>
+          {/* <>{handlePlay}</> */}
           <div className="video-header">
             <h1>{isLive ? 'EN VIVO' : 'VIDEO PROGRAMADO'}</h1>
             <p>{new Date().toLocaleDateString('es-ES', { weekday: 'long', day: 'numeric', month: 'numeric', year: 'numeric' })}</p>
@@ -125,6 +135,7 @@ const VideoTransmision = ({
               url={`${videoUrl}?autoplay=1&mute=1`}
               playing={true}
               muted={isMuted}
+              onPlay={() => notifyState(VIDEO_STATES.PLAYING)}
               onReady={handleReady}
               onEnded={handleVideoEnd}
               width="100%"

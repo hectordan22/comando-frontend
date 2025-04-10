@@ -11,6 +11,9 @@ function CartonRifa() {
     const titleResize = () => {
         const elemRef = document.getElementById("title-carton");
         containerTitleRef.current.clientWidth < 400 ? elemRef.style.fontSize = '1.2rem' : elemRef.style.fontSize = '1.7rem';
+        if(!containerTitleRef){
+            console.log("no esta en la vista")
+        }
     }
 
     const effectNumbers = () => {
