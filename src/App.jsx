@@ -68,7 +68,7 @@ function App() {
              <OfflineNotice key={10}/>,
         ]}/>
         
-        {/*Cambiar la fecha(dateRifa) despues la rifa*/}
+      
         <Route path='/Rifa'
            element = {[
             <div key={1} className='cont-app-reloj'><Reloj type='rifa' /></div>,

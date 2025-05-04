@@ -4,9 +4,16 @@ import ruedaLogo from '../assets/images/mago.png'
 
 import { Link, useLocation } from 'react-router-dom'
 import { useEffect, useState } from 'react';
+import { useInitialStore } from '../store/useGlobalData.js'
+import fetchData from '../scripts/fetchData.js';
+import { useNavigate } from 'react-router-dom';
+
+import { validarVigenciaRifa } from '../scripts/validateRifa.js';
 
 function Navbar({ isVideoVisible, showPopup}) {
   const [isLinkActive, setIsLinkActive] = useState(false);
+  const { dataInicial } = useInitialStore();
+  const navigate = useNavigate();
 
   const verifyViewport = (x) => {
     if (x.matches) {
@@ -64,6 +71,34 @@ function Navbar({ isVideoVisible, showPopup}) {
       }
       elementNavar = e.target;
     }
+   
+  }
+
+  
+
+  const alertRifa = async () => {
+     const { rifaStatus } = dataInicial
+  
+    if (rifaStatus == 'progress') {
+      alert('La Rifa esta en curso actualmente. Te invitamos participar para la próxima Rifa Anunciada')
+      return
+    } 
+
+    if (rifaStatus == 'inactive') {
+      alert('No existe Rifa Activa en estos momentos')
+      return
+    }
+
+    navigate('/Rifa')
+      /* const { error, data,} = await fetchData('http://localhost:3000/api/getRifa')
+      if (!error && data) {
+        console.log(data)
+          if (data.status == 'inactive') {
+            alert('No existe Rifa activa en estos momentooooos')
+            return
+          } 
+          navigate('/Rifa')
+      } */
   }
 
 
@@ -92,14 +127,14 @@ function Navbar({ isVideoVisible, showPopup}) {
             </label>
           </div>
           <h1 className="title-movil">El comando de los PREMIOS</h1>
-          <li onClick={closeMovilNav}><Link className='pathRoute' data-path="/Inicio" to="/Inicio">Inicio</Link ></li>
-          <li onClick={closeMovilNav}><Link className='pathRoute' data-path="/Rifa" to="/Rifa">Rifas</Link></li>
+          <li onClick={closeMovilNav} ><Link className='pathRoute' data-path="/Inicio" to="/Inicio">Inicio</Link ></li>
+           <li onClick={closeMovilNav} > <span onClick={alertRifa} className='pathRoute' style={{cursor:'pointer'}}>Rifas </span> </li>
           <li onClick={isVideoVisible?handleClick:closeMovilNav} ><Link className='pathRoute' data-path="/Sorteo" to={isVideoVisible?"/Inicio":"/Sorteo/none"}>Sorteos</Link></li>
           <li onClick={closeMovilNav}><Link className='pathRoute' data-path="/Awards" to="/Awards">Premios</Link></li>
           <li onClick={closeMovilNav}><Link className='pathRoute' data-path="/Ganadores" to="/Ganadores">Ganadores</Link></li>
           <li onClick={closeMovilNav}><Link className='pathRoute' data-path="/Contactos" to="/Contactos">Contacto</Link></li> 
           <div className='img-logo-movil'>  </div>
-        </ul>
+        </ul> 
       </div>
     </header>
   )

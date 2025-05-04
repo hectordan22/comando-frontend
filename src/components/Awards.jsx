@@ -38,7 +38,8 @@ function Awards() {
         return (
             <>
                 <div className='margin-top'></div>
-                 {infoInitial.error || infoInitial.data.error && 'Ha ocurrido un error al cargar los datos'}
+                <h2 className='error-title'>{infoInitial.error  && 'Ha ocurrido un error al cargar los datos'}</h2> 
+                <h2 className='error-title'>{infoInitial.data.error && infoInitial.data.response.message}</h2> 
                  { 
                  (!infoInitial.error && !infoInitial.data.error) && 
                  titles.map((item, index) => {
@@ -60,6 +61,7 @@ function Awards() {
                                     </div>
                                 )
                             })
+                             
                             }
                         </div>
                     
